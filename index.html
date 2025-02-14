@@ -528,6 +528,7 @@
     <link rel="alternate" type="application/rss+xml" title="Si Qin's Research Updates" href="/feed.xml">
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <header>
         <div class="container">
             <div class="profile-container">
@@ -551,7 +552,7 @@
         </div>
     </header>
 
-    <main class="container">
+    <main id="main-content" class="container">
         <div class="section" id="about">
             <h2>About</h2>
             <p>Si Qin is a Principal Researcher and Research Manager in the Data, Knowledge, and Intelligence (DKI) area of Microsoft AI. Since joining Microsoft Research Asia (MSRA) in November 2018, he has been dedicated to advancing AI for IT Operations (AIOps), focusing on leveraging signal processing, machine learning, and optimization technologies to develop high-quality cloud services. In June 2024, Si Qin joined Microsoft AI, where his research and applied science efforts have centered on developing large language model (LLM)-based retrieval-augmented generation (RAG) systems and agent frameworks. These include the widely recognized open-source projects Taskweaver and UFO.</p>
@@ -584,12 +585,16 @@
 
         <div class="section" id="research">
             <h2>Research</h2>
-            <div class="tabs">
-                <button class="tab-button active" data-tab="publications">Publications</button>
-                <button class="tab-button" data-tab="patents">Patents</button>
+            <div class="tabs" role="tablist">
+                <button id="tab-publications" class="tab-button active" role="tab" aria-selected="true" aria-controls="publications" data-tab="publications">
+                    Publications
+                </button>
+                <button id="tab-patents" class="tab-button" role="tab" aria-selected="false" aria-controls="patents" data-tab="patents">
+                    Patents
+                </button>
             </div>
 
-            <div id="publications" class="tab-content active">
+            <div id="publications" role="tabpanel" aria-labelledby="tab-publications" class="tab-content active">
                 <h3>Journal Articles</h3>
                 <div class="publication-list">
                     <div class="publication">
@@ -803,7 +808,7 @@
                 </div>
             </div>
 
-            <div id="patents" class="tab-content">
+            <div id="patents" role="tabpanel" aria-labelledby="tab-patents" class="tab-content">
                 <div class="patents-container">
                     <div class="patents-column">
                         <h3>Chinese Patents</h3>
