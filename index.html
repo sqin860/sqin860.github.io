@@ -417,6 +417,38 @@
                 font-size: 20px;     /* Slightly smaller on mobile */
             }
         }
+
+        /* Add this CSS in the existing <style> section */
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .tab-button {
+            padding: 10px 20px;
+            background: var(--background-color);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .tab-button.active {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
     </style>
 
     <!-- Additional SEO Meta Tags -->
@@ -550,298 +582,302 @@
             </div>
         </div>
 
-        <div class="section" id="publications">
-            <h2>Publications</h2>
-            
-            <h3>Journal Articles</h3>
-            <div class="publication-list">
-                <div class="publication">
-                    <p>X. Sun, H. Cheng, H. Dong, B. Qiao, <strong>S. Qin</strong>, and Q. Lin. "<a href="https://ieeexplore.ieee.org/abstract/document/10354408" target="_blank">Counter-empirical attacking based on adversarial reinforcement learning for time-relevant scoring system</a>." 
-                       <em>IEEE Transactions on Knowledge and Data Engineering</em>. December 2023.</p>
-                </div>
-                <div class="publication">
-                    <p>Z. Mao, S. Liu, <strong>S. Qin</strong>, and Y. Huang. "<a href="https://doi.org/10.3390/rs14030583" target="_blank">Cramér-Rao bound of joint DOA-range estimation for coprime frequency diverse arrays</a>." 
-                       <em>Remote Sensing</em>, January 2022.</p>
-                </div>
-                <div class="publication">
-                    <p><strong>S. Qin</strong>, Y. D. Zhang, and M. G. Amin. "<a href="https://doi.org/10.1016/j.sigpro.2019.107428" target="_blank">Improved two-dimensional DOA estimation using parallel coprime arrays</a>." 
-                       <em>Signal Processing</em>, July 2020.</p>
-                </div>
-                <div class="publication">
-                    <p>K. Xu, Y. Wang, L. Yang, Y. Wang, B. Qiao, <strong>S. Qin</strong>, Y. Xu, H. Zhang, and H. Qu. "<a href="https://doi.org/10.1109/TVCG.2019.2934613" target="_blank">CloudDet: Interactive visual analysis of anomalous performances in cloud computing systems</a>." 
-                       <em>IEEE Transactions on Visualization and Computer Graphics</em>, January 2020.</p>
-                </div>
-                <div class="publication">
-                    <p><strong>S. Qin</strong>, Y. D. Zhang, M. G. Amin, and F. Gini. "<a href="https://doi.org/10.1109/JSTSP.2016.2627184" target="_blank">Frequency diverse coprime arrays with coprime frequency offsets for multitarget localization</a>." 
-                       <em>IEEE Journal of Selected Topics in Signal Processing</em>, March 2017.</p>
-                </div>
-                <div class="publication">
-                    <p><strong>S. Qin</strong>, Y. D. Zhang, and M. G. Amin. "<a href="https://doi.org/10.1016/j.dsp.2016.06.006" target="_blank">DOA estimation of mixed coherent and uncorrelated targets exploiting coprime MIMO radar</a>." 
-                       <em>Digital Signal Processing</em>, February 2017.</p>
-                </div>
-                <div class="publication">
-                    <p><strong>S. Qin</strong>, Y. D. Zhang, M. G. Amin, and A. M. Zoubir. "<a href="https://doi.org/10.1109/TSP.2016.2614799" target="_blank">Generalized coprime sampling of Toeplitz matrices for spectrum estimation</a>." 
-                       <em>IEEE Transactions on Signal Processing</em>, January 2017.</p>
-                </div>
-                <div class="publication">
-                    <p><strong>S. Qin</strong>, Y. D. Zhang, and M. G. Amin. "<a href="https://doi.org/10.1016/j.sigpro.2016.06.008" target="_blank">DOA estimation exploiting a uniform linear array with multiple co-prime frequencies</a>." 
-                       <em>Signal Processing</em>, vol. 130, pp. 37-46, January 2017. 
-                       <strong class="award">(2021 EURASIP Best Paper Award)</strong></p>
-                </div>
-                <div class="publication">
-                    <p><strong>S. Qin</strong>, Q. Wu, Y. D. Zhang, and M. G. Amin. "<a href="https://doi.org/10.1155/2015/783467" target="_blank">Structure-aware Bayesian compressive sensing for near-field source localization based on sensor-angle distributions</a>." 
-                       <em>International Journal of Antennas and Propagation</em>, April 2015.</p>
-                </div>
-                <div class="publication">
-                    <p><strong>S. Qin</strong>, Y. D. Zhang, and M. G. Amin. "<a href="https://doi.org/10.1109/TSP.2015.2393838" target="_blank">Generalized coprime array configurations for direction-of-arrival estimation</a>." 
-                       <em>IEEE Transactions on Signal Processing</em>, vol. 63, no. 6, pp. 1377-1390, January 2015. 
-                       <strong class="award">(IEEE Signal Processing Society 2018 Young Author Best Paper Award)</strong></p>
-                </div>
-                <div class="publication">
-                    <p>X. Ma, <strong>S. Qin</strong>, W. Sheng, H. Wang, and X. Ni. "<a href="http://www.cqvip.com/qk/91657a/20134/1002052953.html" target="_blank">Development of digital T/R module for X-band digital array radar</a>." 
-                       <em>Journal of Nanjing University of Science and Technology</em>, July 2013.</p>
-                </div>
+        <div class="section" id="research">
+            <h2>Research</h2>
+            <div class="tabs">
+                <button class="tab-button active" data-tab="publications">Publications</button>
+                <button class="tab-button" data-tab="patents">Patents</button>
             </div>
 
-            <h3>Conference Papers</h3>
-            <div class="publication-list">
-                <div class="publication">
-                    <p>C. Zhang, Z. Ma, Y. Wu, S. He, <strong>S. Qin</strong>, M. Ma, X. Qin, Y. Kang, Y. Liang, X. Gou, Y. Xue, Q. Lin, S. Rajmohan, D. Zhang, and Q. Zhang. "AllHands: Ask Me Anything on Large-scale Verbatim Feedback via Large Language Models." 
-                       <em>Proceedings of the 41st IEEE International Conference on Data Engineering</em>, Hong Kong, China, May 2025. ICDE'25.</p>
-                </div>
-                <div class="publication">
-                    <p>L. Wang, M. Das, F. Yang, B. Qiao, H. Dong, <strong>S. Qin</strong>, V. Rühle, C. Bansal, E. Cortez, Í. Goiri, S. Rajmohan, Q. Lin, and D. Zhang. "ProtoRAIL: A Risk-cognizant Imitation Agent for Adaptive vCPU Oversubscription In the Cloud." 
-                       <em>Proceedings of the 8th Annual Conference on Machine Learning and Systems</em>, Santa Clara, CA, USA, May 2025. MLSys'25.</p>
-                </div>
-                <div class="publication">
-                    <p>C. Zhang, L. Li, S. He, X. Zhang, B. Qiao, <strong>S. Qin</strong>, M. Ma, Y. Kang, Q. Lin, S. Rajmohan, D. Zhang, and Q. Zhang. "UFO: A UI-Focused Agent for Windows OS Interaction." 
-                       <em>Proceedings of 2025 Annual Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics</em>, Albuquerque, NM, USA, April 2025. NAACL'25.</p>
-                </div>
-                <div class="publication">
-                    <p>Y. Zhang, P. Xiao, L. Wang, C. Zhang, M. Fang, Y. Du, Y. Puzyrev, R. Yao, <strong>S. Qin</strong>, Q. Lin, M. Pechenizkiy, D. Zhang, S. Rajmohan, and Q. Zhang. "RuAG: Learned-rule-augmented Generation for Large Language Models." 
-                       <em>Proceedings of the 2025 International Conference on Learning Representations</em>, Singapore, Singapore, April 2025. ICLR'25.</p>
-                </div>
-                <div class="publication">
-                    <p>C. Zhang, R. Yao, <strong>S. Qin</strong>, Z. Li, S. Agrawal, B. R. Mishra, T. Tran, M. Ma, Q. Lin, M. Chintalapati, and D. Zhang. "<a href="https://dl.acm.org/doi/10.1145/3698038.3698534" target="_blank">Deoxys: a causal inference engine for unhealthy node mitigation in large-scale cloud infrastructure</a>." 
-                       <em>Proceedings of the 2024 ACM Symposium on Cloud Computing</em>, Redmond, WA, USA, November 2024. SOCC'24.</p>
-                </div>
-                <div class="publication">
-                    <p>L. Wang, M. Das, F. Yang, C. Du, B. Qiao, H. Dong, C. Bansal, <strong>S. Qin</strong>, S. Rajmohan, Q. Lin, D. Zhang, and Q. Zhang. "<a href="https://dl.acm.org/doi/abs/10.1145/3627673.3680060" target="_blank">COIN: chance-constrained imitation learning for safe and adaptive resource oversubscription under uncertainty</a>." 
-                       <em>Proceedings of the 33rd ACM International Conference on Information and Knowledge Management</em>, Boise, Idaho, USA, October 2024. CIKM'24.</p>
-                </div>
-                <div class="publication">
-                    <p>R. Ding, C. Zhang, L. Wang, Y. Xu, M. Ma, W. Zhang, <strong>S. Qin</strong>, S. Rajmohan, Q. Lin, and D. Zhang. "<a href="https://aclanthology.org/2024.findings-acl.95.pdf" target="_blank">Everything of Thoughts: defying the law of Penrose Triangle for thought generation</a>." 
-                       <em>Findings of the Association for Computational Linguistics: ACL 2024</em>, Bangkok, Thailand, August 2024. Finding of ACL'24.</p>
-                </div>
-                <div class="publication">
-                    <p>Z. Yu, M. Ma, C. Zhang, <strong>S. Qin</strong>, Y. Kang, C. Bansal, S. Rajmohan, Y. Dang, C. Pei, D. Pei, Q. Lin, and D. Zhang. "<a href="https://dl.acm.org/doi/abs/10.1145/3663529.3663826" target="_blank">MonitorAssistant: simplifying cloud service monitoring via large language models</a>." 
-                       <em>Companion Proceedings of the 32nd ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering</em>, Porto de Galinhas, Brazil, July 2024. ESEC/FSE'24 Industry Track.</p>
-                </div>
-                <div class="publication">
-                    <p>Y. Jiang, C. Zhang, S. He, Z. Yang, M. Ma, <strong>S. Qin</strong>, Y. Kang, Y. Dang, S. Rajmohan, Q. Lin, and D. Zhang. "<a href="https://dl.acm.org/doi/abs/10.1145/3597503.3639081" target="_blank">Xpert: empowering incident management with query recommendations via large language models</a>." 
-                       <em>Proceedings of the IEEE/ACM 46th International Conference on Software Engineering</em>, Lisbon, Portugal, April 2024. ICSE'24.</p>
-                </div>
-                <div class="publication">
-                    <p>H. Li, M. Ma, Y. Liu, <strong>S. Qin</strong>, B. Qiao, R. Yao, H. Chaturvedi, T. Tran, M. Chintalapati, S. Rajmohan, Q. Lin, and D. Zhang. "<a href="https://ieeexplore.ieee.org/abstract/document/10301225" target="_blank">CODEC: cost-effective duration prediction system for deadline scheduling in the cloud</a>." 
-                       <em>Proceedings of the IEEE 34th International Symposium on Software Reliability Engineering</em>, Florence, Italy, October 2023. ISSRE'23.</p>
-                </div>
-                <div class="publication">
-                    <p>X. Qin, M. Ma, Y. Zhao, J. Zhang, C. Du, Y. Liu, A. Parayil, C. Bansal, S. Rajmohan, I. Goiri, E. Cortez, <strong>S. Qin</strong>, Q. Lin, and D. Zhang. "<a href="https://ieeexplore.ieee.org/document/10202641" target="_blank">How different are the cloud workloads? Characterizing large-scale private and public cloud workloads</a>." 
-                       <em>Proceedings of the 53rd Annual IEEE/IFIP International Conference on Dependable Systems and Networks</em>, Porto, Portugal, June 2023. DSN'23.</p>
-                </div>
-                <div class="publication">
-                    <p>J. Sheng, L. Wang, Y. Fang, B. Qiao, H. Dong, X. Wang, B. Jin, J. Wang, <strong>S. Qin</strong>, S. Rajmohan, Q. Lin, and D. Zhang. "<a href="https://dl.acm.org/doi/10.1145/3543507.3583298" target="_blank">Learning cooperative oversubscription for cloud by chance-constrained multi-agent reinforcement learning</a>." 
-                       <em>Proceedings of the ACM Web Conference 2023</em>, Austin, TX, April 2023. WWW'23.</p>
-                </div>
-                <div class="publication">
-                    <p>H. Liu, P. Zhang, <strong>S. Qin</strong>, Y. Shi, M. Xu, Q. Lin, and D. Zhang. "<a href="https://dl.acm.org/doi/abs/10.1145/3543873.3584631" target="_blank">HAPENS: Hardness-personalized negative sampling for implicit collaborative filtering</a>." 
-                       <em>Companion Proceedings of the ACM Web Conference 2023</em>, Austin, TX, April 2023. WWW'23 Industry Track.</p>
-                </div>
-                <div class="publication">
-                    <p>T. Cheng, H. Dong, L. Wang, B. Qiao, <strong>S. Qin</strong>, Q. Lin, D. Zhang, S. Rajmohan, and T. Moscibroda. "<a href="https://dl.acm.org/doi/abs/10.1145/3543873.3584634" target="_blank">Multi-Agent reinforcement learning with shared policy for cloud quota management problem</a>." 
-                       <em>Companion Proceedings of the ACM Web Conference 2023</em>, Austin, TX, April 2023. WWW'23 Industry Track.</p>
-                </div>
-                <div class="publication">
-                    <p>F. Yang, L. Wang, Z. Xu, J. Zhang, L. Li, B. Qiao, C. Couturier, C. Bansal, S. Ram, <strong>S. Qin</strong>, Z. Ma, I. Goiri, E. Cortez, T. Yang, V. Rühle, S. Rajmohan, Q. Lin, and D. Zhang. "<a href="https://dl.acm.org/doi/abs/10.1145/3582016.3582028" target="_blank">Snape: Reliable and low-cost computing with mixture of spot and on-demand VMs</a>." 
-                       <em>Proceedings of the 28th ACM International Conference on Architectural Support for Programming Languages and Operating Systems</em>, Vancouver, Canada, March 2023. ASPLOS'23.</p>
-                </div>
-                <div class="publication">
-                    <p>J. Yan, Y. Lu, L. Chen, <strong>S. Qin</strong>, Y. Fang, Q. Lin, T. Moscibroda, S. Rajmohan, and D. Zhang. "<a href="https://dl.acm.org/doi/10.1145/3534678.3539334" target="_blank">Solving the batch stochastic bin packing problem in cloud: A chance-constrained optimization approach</a>." 
-                       <em>Proceedings of the 28th ACM SIGKDD Conference on Knowledge Discovery and Data Mining</em>, Washington, DC, August 2022. SIGKDD'22.</p>
-                </div>
-                <div class="publication">
-                    <p>C. Lou, C. Chen, P. Huang, Y. Dang, <strong>S. Qin</strong>, X. Yang, X. Li, Q. Lin, and M. Chintalapati. "<a href="https://www.usenix.org/conference/osdi22/presentation/lou-chang-resin" target="_blank">RESIN: A holistic service for dealing with memory leaks in production cloud infrastructure</a>." 
-                       <em>Proceedings of the 16th USENIX Symposium on Operating Systems Design and Implementation</em>, Carlsbad, CA, July 2022. OSDI'22.</p>
-                </div>
-                <div class="publication">
-                    <p>F. Yang, B. Pang, J. Zhang, B. Qiao, L. Wang, C. Couturier, C. Bansal, S. Ram, <strong>S. Qin</strong>, Z. Ma, Í. Goiri, E. Cortez, S. Baladhandayutham, V. Rühle, S. Rajmohan, Q. Lin, and D. Zhang. "<a href="https://www2022.thewebconf.org/PaperFiles/43.pdf" target="_blank">Spot virtual machine eviction prediction in Microsoft cloud</a>." 
-                       <em>Companion Proceedings of the ACM Web Conference 2022</em>, Lyon, France, April 2022. WWW'22 Industry Track.</p>
-                </div>
-                <div class="publication">
-                    <p>H. Dong, <strong>S. Qin</strong>, Y. Xu, B. Qiao, S. Zhou, X. Yang, C. Luo, P. Zhao, Q. Lin, H. Zhang, A. Abuduweili, S. Ramanujan, K. Subramanian, A. Zhou, S. Rajmohan, D. Zhang, and T. Moscibroda. "<a href="https://doi.org/10.1145/3468264.3473917" target="_blank">Effective low capacity status prediction for cloud systems</a>." 
-                       <em>Companion Proceedings of the 29th ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering</em>, Athens, Greece, August 2021. ESEC/FSE'21 Industry Track.</p>
-                </div>
-                <div class="publication">
-                    <p>X. Zhang, Y. Xu, <strong>S. Qin</strong>, S. He, B. Qiao, Z. Li, H. Zhang, X. Li, Y. Dang, Q. Lin, M. Chintalapati, S. Rajmohan, and D. Zhang. "<a href="https://doi.org/10.1145/3468264.3473919" target="_blank">Onion: identifying incident-indicating logs for cloud systems</a>." 
-                       <em>Companion Proceedings of the 29th ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering</em>, Athens, Greece, August 2021. ESEC/FSE'21 Industry Track.</p>
-                </div>
-                <div class="publication">
-                    <p>X. Zhang, C. Du, Y. Li, Y. Xu, H. Zhang, <strong>S. Qin</strong>, Z. Li, Q. Lin, Y. Dang, A. Zhou, S. Rajmohan, and D. Zhang. "<a href="https://doi.org/10.1145/3447548.3467190" target="_blank">HALO: Hierarchy-aware fault localization for cloud systems</a>." 
-                       <em>Proceedings of the 27th ACM SIGKDD Conference on Knowledge Discovery and Data Mining</em>, Singapore, Singapore, August 2021. SIGKDD'21 Applied Data Science Track.</p>
-                </div>
-                <div class="publication">
-                    <p>H. Dong, B. Wang, B. Qiao, W. Xing, C. Luo, <strong>S. Qin</strong>, Q. Lin, D. Zhang, G. Virdi, and T. Moscibroda. "<a href="https://www.ijcai.org/proceedings/2021/0499.pdf" target="_blank">Predictive job scheduling under uncertain constraints in cloud computing</a>." 
-                       <em>Proceedings of the 30th International Joint Conference on Artificial Intelligence</em>, Montreal, Canada, August 2021. IJCAI'21.</p>
-                </div>
-                <div class="publication">
-                    <p>J. Gu, C. Luo, <strong>S. Qin</strong>, B. Qiao, Q. Lin, H. Zhang, Z. Li, Y. Dang, S. Cai, W. Wu, Y. Zhou, M. Chintalapati, and D. Zhang. "<a href="https://doi.org/10.1145/3368089.3409741" target="_blank">Efficient incident identification from multi-dimensional issue reports via meta-heuristic search</a>." 
-                       <em>Proceedings of the 28th ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering</em>, Sacramento, CA, November 2020. ESEC/FSE'20.</p>
-                </div>
-                <div class="publication">
-                    <p> X. Zhang, Q. Lin, Y. Xu, <strong>S. Qin</strong>, H. Zhang, B. Qiao, Y. Dang, X. Yang, Q. Cheng, M. Chintalapati, Y. Wu, K. Hsieh, K. Sui, X. Meng, Y. Xu, W. Zhang, F. Shen, and D. Zhang. "<a href="https://www.usenix.org/system/files/atc19-zhang-xu.pdf" target="_blank">Cross-dataset time series anomaly detection for cloud systems</a>." 
-                       <em>Proceedings of the 2019 USENIX Annual Technical Conference</em>, Renton, WA, July 2019. USENIX ATC'19.</p>
-                </div>
-                <div class="publication">
-                    <p><strong>S. Qin</strong>, Y. D. Zhang, and M. G. Amin. "<a href="https://doi.org/10.1109/SAM.2016.7569635" target="_blank">Two-dimensional DOA estimation using parallel coprime subarrays</a>." 
-                       <em>Proceedings of the IEEE Sensor Array and Multichannel Signal Processing Workshop</em>, Rio de Janeiro, Brazil, July 2016. SAM'16.</p>
-                </div>
-                <div class="publication">
-                    <p>B. Wang, Y. D. Zhang, <strong>S. Qin</strong>, and M. G. Amin. "<a href="https://doi.org/10.1117/12.2225835" target="_blank">Robust nonstationary jammer mitigation for GPS receivers with instantaneous frequency error tolerance</a>." 
-                       <em>Proceedings of the SPIE Commercial+ Scientific Sensing and Imaging Conference</em>, Baltimore, MD, May 2016. SPIE'16.</p>
-                </div>
-                <div class="publication">
-                    <p>S. Liu, Y. D. Zhang, T. Shan, <strong>S. Qin</strong>, and M. G. Amin. "<a href="https://doi.org/10.1117/12.2228339" target="_blank">Structure-aware Bayesian compressive sensing for frequency-hopping spectrum estimation</a>." 
-                       <em>Proceedings of the SPIE Commercial+ Scientific Sensing and Imaging Conference</em>, Baltimore, MD, May 2016. SPIE'16.</p>
-                </div>
-                <div class="publication">
-                    <p><strong>S. Qin</strong>, Y. D. Zhang, and M. G. Amin. "<a href="https://doi.org/10.1109/RADAR.2016.7485154" target="_blank">Sparsity-based multi-target localization exploiting frequency diverse array radar with coprime array and coprime frequency offset</a>." 
-                       <em>Proceedings of the IEEE Radar Conference</em>, Philadelphia, PA, May 2016. RadarCon'16.</p>
-                </div>
-                <div class="publication">
-                    <p><strong>S. Qin</strong>, Y. D. Zhang, M. G. Amin, and A. M. Zoubir. "<a href="https://doi.org/10.1109/ICASSP.2016.7472522" target="_blank">Generalized coprime sampling of Toeplitz matrices</a>." 
-                       <em>Proceedings of the IEEE International Conference on Acoustics, Speech, and Signal Processing</em>, Shanghai, China, March 2016. ICASSP'16.</p>
-                </div>
-                <div class="publication">
-                    <p><strong>S. Qin</strong>, Y. D. Zhang, and M. G. Amin. "<a href="https://doi.org/10.1109/ChinaSIP.2015.7230418" target="_blank">Sparsity-based multi-target localization exploiting multi-frequency coprime array</a>." 
-                       <em>Proceedings of the IEEE China Summit and International Conference on Signal and Information Processing</em>, Chengdu, China, July 2015. ChinaSIP'15.</p>
-                </div>
-                <div class="publication">
-                    <p><strong>S. Qin</strong>, Y. D. Zhang, and M. G. Amin. "<a href="https://doi.org/10.1117/12.2178341" target="_blank">High-resolution frequency estimation using generalized coprime sampling</a>." 
-                       <em>Proceedings of the SPIE Mobile Multimedia/Image Processing, Security, and Applications Conference</em>, Baltimore, MD, May 2015. SPIE'15.</p>
-                </div>
-                <div class="publication">
-                    <p>Y. D. Zhang, <strong>S. Qin</strong>, and M. G. Amin. "<a href="https://doi.org/10.1109/RADAR.2015.7131121" target="_blank">Near-field source localization based on sparse reconstruction of sensor-angle distribution</a>." 
-                       <em>Proceedings of the IEEE International Radar Conference</em>, Arlington, VA, May 2015. RadarCon'15.</p>
-                </div>
-                <div class="publication">
-                    <p><strong>S. Qin</strong>, Y. D. Zhang, Q. Wu, and M. G. Amin. "<a href="https://doi.org/10.1109/ICASSP.2015.7178401" target="_blank">DOA estimation of non-parametric spreading spatial spectrum based on Bayesian compressive sensing exploiting intra-task dependency</a>." 
-                       <em>Proceedings of the IEEE International Conference on Acoustics, Speech, and Signal Processing</em>, Brisbane, Australia, April 2015. ICASSP'15.</p>
-                </div>
-                <div class="publication">
-                    <p><strong>S. Qin</strong>, Y. D. Zhang, and M. G. Amin. "<a href="https://doi.org/10.1109/BenMAS.2014.7529468" target="_blank">DOA estimation of mixed coherent and uncorrelated signals exploiting a nested MIMO system</a>." 
-                       <em>Proceedings of the IEEE Benjamin Franklin Symposium on Microwave and Antenna Sub-systems</em>, Philadelphia, PA, September 2014. BenMAS'14. 
-                       <strong class="award">(First Prize of Student Paper Competition)</strong></p>
-                </div>
-                <div class="publication">
-                    <p><strong>S. Qin</strong>, Y. D. Zhang, Q. Wu, and M. G. Amin. "<a href="https://doi.org/10.1109/ICDSP.2014.6900784" target="_blank">Large-scale sparse reconstruction through partitioned compressive sensing</a>." 
-                       <em>Proceedings of the International Conference on Digital Signal Processing</em>, Hong Kong, China, August 2014. DSP'14.</p>
-                </div>
-                <div class="publication">
-                    <p><strong>S. Qin</strong>, Y. D. Zhang, and M. G. Amin. "<a href="https://doi.org/10.1109/SAM.2014.6882459" target="_blank">Generalized coprime array configurations</a>." 
-                       <em>Proceedings of the IEEE Sensor Array and Multichannel Signal Processing Workshop</em>, A Coruña, Spain, June 2014. SAM'14.</p>
-                </div>
-                <div class="publication">
-                    <p><strong>S. Qin</strong>, Y. D. Zhang, and M. G. Amin. "<a href="https://doi.org/10.1117/12.2051000" target="_blank">DOA estimation exploiting coprime frequencies</a>." 
-                       <em>Proceedings of the SPIE Wireless Sensing, Localization, and Processing Conference</em>, vol. 9103, Baltimore, MD, May 2014. SPIE'14.</p>
-                </div>
-                <div class="publication">
-                    <p>Y. D. Zhang, <strong>S. Qin</strong>, and M. G. Amin. "<a href="https://doi.org/10.1109/ICASSP.2014.6854003" target="_blank">DOA estimation exploiting coprime arrays with sparse sensor spacing</a>." 
-                       <em>Proceedings of the IEEE International Conference on Acoustics, Speech, and Signal Processing</em>, Florence, Italy, May 2014. ICASSP'14.</p>
-                </div>
-                <div class="publication">
-                    <p><strong>S. Qin</strong>, X. Ma, and W. Sheng. "<a href="https://doi.org/10.1109/ICMMT.2012.6229966" target="_blank">Design and measurement of channel calibration for digital array with orthogonal codes</a>." 
-                       <em>Proceedings of the IEEE International Conference on Microwave and Millimeter Wave Technology</em>, Shenzhen, China, May 2012. ICMMT'12. 
-                       <strong class="award">(Best Student Paper Award)</strong></p>
-                </div>
-            </div>
-        </div>
-
-        <div class="section" id="patents">
-            <h2>Patents</h2>
-            
-            <div class="patents-container">
-                <div class="patents-column">
-                    <h3>Chinese Patents</h3>
-                    <div class="publication-list">
-                        <div class="publication">
-                            <p><strong>秦思</strong>, 赵成帅. "<a href="https://patents.google.com/patent/CN110133594A/zh?inventor=%E7%A7%A6%E6%80%9D&assignee=%E6%90%9C%E7%8B%97&oq=%E7%A7%A6%E6%80%9D+%E6%90%9C%E7%8B%97" target="_blank">一种声源定位方法、装置和用于声源定位的装置</a>." 
-                               北京搜狗科技发展有限公司，CN110133594A, 2018年2月申请，2019年8月发布，2023年4月授权.</p>
-                        </div>
-                        <div class="publication">
-                            <p><strong>秦思</strong>, 赵成帅. "<a href="https://patents.google.com/patent/CN110133595A/zh?inventor=%E7%A7%A6%E6%80%9D&assignee=%E6%90%9C%E7%8B%97&oq=%E7%A7%A6%E6%80%9D+%E6%90%9C%E7%8B%97" target="_blank">一种声源测向方法、装置和用于声源测向的装置</a>." 
-                               北京搜狗科技发展有限公司，CN110133595A, 2018年2月申请，2019年8月发布，2023年5月授权.</p>
-                        </div>
-                        <div class="publication">
-                            <p>沙永涛, 贾朝阳, <strong>秦思</strong>. "<a href="https://patents.google.com/patent/CN111339371A/zh?inventor=%E7%A7%A6%E6%80%9D&assignee=%E5%98%80%E5%98%80&oq=%E7%A7%A6%E6%80%9D+%E5%98%80%E5%98%80" target="_blank">一种数据处理方法及装置</a>." 
-                               北京嘀嘀无限科技发展有限公司，CN111339371A, 2018年12月申请，2020年6月发布, 2023年8月授权.</p>
-                        </div>
-                        <div class="publication">
-                            <p>沙永涛, <strong>秦思</strong>, 张毅, 宋辉. "<a href="https://patents.google.com/patent/CN110782887A/zh?inventor=%E7%A7%A6%E6%80%9D&assignee=%E5%98%80%E5%98%80&oq=%E7%A7%A6%E6%80%9D+%E5%98%80%E5%98%80" target="_blank">语音信号处理方法、系统、装置、设备和计算机存储介质</a>." 
-                               北京嘀嘀无限科技发展有限公司，CN110782887A, 2019年3月申请，2020年2月发布.</p>
-                        </div>
+            <div id="publications" class="tab-content active">
+                <h3>Journal Articles</h3>
+                <div class="publication-list">
+                    <div class="publication">
+                        <p>X. Sun, H. Cheng, H. Dong, B. Qiao, <strong>S. Qin</strong>, and Q. Lin. "<a href="https://ieeexplore.ieee.org/abstract/document/10354408" target="_blank">Counter-empirical attacking based on adversarial reinforcement learning for time-relevant scoring system</a>." 
+                           <em>IEEE Transactions on Knowledge and Data Engineering</em>. December 2023.</p>
+                    </div>
+                    <div class="publication">
+                        <p>Z. Mao, S. Liu, <strong>S. Qin</strong>, and Y. Huang. "<a href="https://doi.org/10.3390/rs14030583" target="_blank">Cramér-Rao bound of joint DOA-range estimation for coprime frequency diverse arrays</a>." 
+                           <em>Remote Sensing</em>, January 2022.</p>
+                    </div>
+                    <div class="publication">
+                        <p><strong>S. Qin</strong>, Y. D. Zhang, and M. G. Amin. "<a href="https://doi.org/10.1016/j.sigpro.2019.107428" target="_blank">Improved two-dimensional DOA estimation using parallel coprime arrays</a>." 
+                           <em>Signal Processing</em>, July 2020.</p>
+                    </div>
+                    <div class="publication">
+                        <p>K. Xu, Y. Wang, L. Yang, Y. Wang, B. Qiao, <strong>S. Qin</strong>, Y. Xu, H. Zhang, and H. Qu. "<a href="https://doi.org/10.1109/TVCG.2019.2934613" target="_blank">CloudDet: Interactive visual analysis of anomalous performances in cloud computing systems</a>." 
+                           <em>IEEE Transactions on Visualization and Computer Graphics</em>, January 2020.</p>
+                    </div>
+                    <div class="publication">
+                        <p><strong>S. Qin</strong>, Y. D. Zhang, M. G. Amin, and F. Gini. "<a href="https://doi.org/10.1109/JSTSP.2016.2627184" target="_blank">Frequency diverse coprime arrays with coprime frequency offsets for multitarget localization</a>." 
+                           <em>IEEE Journal of Selected Topics in Signal Processing</em>, March 2017.</p>
+                    </div>
+                    <div class="publication">
+                        <p><strong>S. Qin</strong>, Y. D. Zhang, and M. G. Amin. "<a href="https://doi.org/10.1016/j.dsp.2016.06.006" target="_blank">DOA estimation of mixed coherent and uncorrelated targets exploiting coprime MIMO radar</a>." 
+                           <em>Digital Signal Processing</em>, February 2017.</p>
+                    </div>
+                    <div class="publication">
+                        <p><strong>S. Qin</strong>, Y. D. Zhang, M. G. Amin, and A. M. Zoubir. "<a href="https://doi.org/10.1109/TSP.2016.2614799" target="_blank">Generalized coprime sampling of Toeplitz matrices for spectrum estimation</a>." 
+                           <em>IEEE Transactions on Signal Processing</em>, January 2017.</p>
+                    </div>
+                    <div class="publication">
+                        <p><strong>S. Qin</strong>, Y. D. Zhang, and M. G. Amin. "<a href="https://doi.org/10.1016/j.sigpro.2016.06.008" target="_blank">DOA estimation exploiting a uniform linear array with multiple co-prime frequencies</a>." 
+                           <em>Signal Processing</em>, vol. 130, pp. 37-46, January 2017. 
+                           <strong class="award">(2021 EURASIP Best Paper Award)</strong></p>
+                    </div>
+                    <div class="publication">
+                        <p><strong>S. Qin</strong>, Q. Wu, Y. D. Zhang, and M. G. Amin. "<a href="https://doi.org/10.1155/2015/783467" target="_blank">Structure-aware Bayesian compressive sensing for near-field source localization based on sensor-angle distributions</a>." 
+                           <em>International Journal of Antennas and Propagation</em>, April 2015.</p>
+                    </div>
+                    <div class="publication">
+                        <p><strong>S. Qin</strong>, Y. D. Zhang, and M. G. Amin. "<a href="https://doi.org/10.1109/TSP.2015.2393838" target="_blank">Generalized coprime array configurations for direction-of-arrival estimation</a>." 
+                           <em>IEEE Transactions on Signal Processing</em>, vol. 63, no. 6, pp. 1377-1390, January 2015. 
+                           <strong class="award">(IEEE Signal Processing Society 2018 Young Author Best Paper Award)</strong></p>
+                    </div>
+                    <div class="publication">
+                        <p>X. Ma, <strong>S. Qin</strong>, W. Sheng, H. Wang, and X. Ni. "<a href="http://www.cqvip.com/qk/91657a/20134/1002052953.html" target="_blank">Development of digital T/R module for X-band digital array radar</a>." 
+                           <em>Journal of Nanjing University of Science and Technology</em>, July 2013.</p>
                     </div>
                 </div>
 
-                <div class="patents-column">
-                    <h3>English Patents</h3>
-                    <div class="publication-list">
-                        <div class="publication">
-                            <p>Y. Zhang, H. Song, Y. Sha, and <strong>S. Qin</strong>. "<a href="https://patents.google.com/patent/US11227622B2/en?inventor=si+qin&assignee=didi&oq=si+qin+didi" target="_blank">Speech communication system and method for improving speech intelligibility</a>." 
-                               Beijing Didi Infinity Technology and Development Co Ltd, US11227622B2, Application: 2018.12, Publication: 2021.7, Granted: 2022.1.</p>
+                <h3>Conference Papers</h3>
+                <div class="publication-list">
+                    <div class="publication">
+                        <p>C. Zhang, Z. Ma, Y. Wu, S. He, <strong>S. Qin</strong>, M. Ma, X. Qin, Y. Kang, Y. Liang, X. Gou, Y. Xue, Q. Lin, S. Rajmohan, D. Zhang, and Q. Zhang. "AllHands: Ask Me Anything on Large-scale Verbatim Feedback via Large Language Models." 
+                           <em>Proceedings of the 41st IEEE International Conference on Data Engineering</em>, Hong Kong, China, May 2025. ICDE'25.</p>
+                    </div>
+                    <div class="publication">
+                        <p>L. Wang, M. Das, F. Yang, B. Qiao, H. Dong, <strong>S. Qin</strong>, V. Rühle, C. Bansal, E. Cortez, Í. Goiri, S. Rajmohan, Q. Lin, and D. Zhang. "ProtoRAIL: A Risk-cognizant Imitation Agent for Adaptive vCPU Oversubscription In the Cloud." 
+                           <em>Proceedings of the 8th Annual Conference on Machine Learning and Systems</em>, Santa Clara, CA, USA, May 2025. MLSys'25.</p>
+                    </div>
+                    <div class="publication">
+                        <p>C. Zhang, L. Li, S. He, X. Zhang, B. Qiao, <strong>S. Qin</strong>, M. Ma, Y. Kang, Q. Lin, S. Rajmohan, D. Zhang, and Q. Zhang. "UFO: A UI-Focused Agent for Windows OS Interaction." 
+                           <em>Proceedings of 2025 Annual Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics</em>, Albuquerque, NM, USA, April 2025. NAACL'25.</p>
+                    </div>
+                    <div class="publication">
+                        <p>Y. Zhang, P. Xiao, L. Wang, C. Zhang, M. Fang, Y. Du, Y. Puzyrev, R. Yao, <strong>S. Qin</strong>, Q. Lin, M. Pechenizkiy, D. Zhang, S. Rajmohan, and Q. Zhang. "RuAG: Learned-rule-augmented Generation for Large Language Models." 
+                           <em>Proceedings of the 2025 International Conference on Learning Representations</em>, Singapore, Singapore, April 2025. ICLR'25.</p>
+                    </div>
+                    <div class="publication">
+                        <p>C. Zhang, R. Yao, <strong>S. Qin</strong>, Z. Li, S. Agrawal, B. R. Mishra, T. Tran, M. Ma, Q. Lin, M. Chintalapati, and D. Zhang. "<a href="https://dl.acm.org/doi/10.1145/3698038.3698534" target="_blank">Deoxys: a causal inference engine for unhealthy node mitigation in large-scale cloud infrastructure</a>." 
+                           <em>Proceedings of the 2024 ACM Symposium on Cloud Computing</em>, Redmond, WA, USA, November 2024. SOCC'24.</p>
+                    </div>
+                    <div class="publication">
+                        <p>L. Wang, M. Das, F. Yang, C. Du, B. Qiao, H. Dong, C. Bansal, <strong>S. Qin</strong>, S. Rajmohan, Q. Lin, D. Zhang, and Q. Zhang. "<a href="https://dl.acm.org/doi/abs/10.1145/3627673.3680060" target="_blank">COIN: chance-constrained imitation learning for safe and adaptive resource oversubscription under uncertainty</a>." 
+                           <em>Proceedings of the 33rd ACM International Conference on Information and Knowledge Management</em>, Boise, Idaho, USA, October 2024. CIKM'24.</p>
+                    </div>
+                    <div class="publication">
+                        <p>R. Ding, C. Zhang, L. Wang, Y. Xu, M. Ma, W. Zhang, <strong>S. Qin</strong>, S. Rajmohan, Q. Lin, and D. Zhang. "<a href="https://aclanthology.org/2024.findings-acl.95.pdf" target="_blank">Everything of Thoughts: defying the law of Penrose Triangle for thought generation</a>." 
+                           <em>Findings of the Association for Computational Linguistics: ACL 2024</em>, Bangkok, Thailand, August 2024. Finding of ACL'24.</p>
+                    </div>
+                    <div class="publication">
+                        <p>Z. Yu, M. Ma, C. Zhang, <strong>S. Qin</strong>, Y. Kang, C. Bansal, S. Rajmohan, Y. Dang, C. Pei, D. Pei, Q. Lin, and D. Zhang. "<a href="https://dl.acm.org/doi/abs/10.1145/3663529.3663826" target="_blank">MonitorAssistant: simplifying cloud service monitoring via large language models</a>." 
+                           <em>Companion Proceedings of the 32nd ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering</em>, Porto de Galinhas, Brazil, July 2024. ESEC/FSE'24 Industry Track.</p>
+                    </div>
+                    <div class="publication">
+                        <p>Y. Jiang, C. Zhang, S. He, Z. Yang, M. Ma, <strong>S. Qin</strong>, Y. Kang, Y. Dang, S. Rajmohan, Q. Lin, and D. Zhang. "<a href="https://dl.acm.org/doi/abs/10.1145/3597503.3639081" target="_blank">Xpert: empowering incident management with query recommendations via large language models</a>." 
+                           <em>Proceedings of the IEEE/ACM 46th International Conference on Software Engineering</em>, Lisbon, Portugal, April 2024. ICSE'24.</p>
+                    </div>
+                    <div class="publication">
+                        <p>H. Li, M. Ma, Y. Liu, <strong>S. Qin</strong>, B. Qiao, R. Yao, H. Chaturvedi, T. Tran, M. Chintalapati, S. Rajmohan, Q. Lin, and D. Zhang. "<a href="https://ieeexplore.ieee.org/abstract/document/10301225" target="_blank">CODEC: cost-effective duration prediction system for deadline scheduling in the cloud</a>." 
+                           <em>Proceedings of the IEEE 34th International Symposium on Software Reliability Engineering</em>, Florence, Italy, October 2023. ISSRE'23.</p>
+                    </div>
+                    <div class="publication">
+                        <p>X. Qin, M. Ma, Y. Zhao, J. Zhang, C. Du, Y. Liu, A. Parayil, C. Bansal, S. Rajmohan, I. Goiri, E. Cortez, <strong>S. Qin</strong>, Q. Lin, and D. Zhang. "<a href="https://ieeexplore.ieee.org/document/10202641" target="_blank">How different are the cloud workloads? Characterizing large-scale private and public cloud workloads</a>." 
+                           <em>Proceedings of the 53rd Annual IEEE/IFIP International Conference on Dependable Systems and Networks</em>, Porto, Portugal, June 2023. DSN'23.</p>
+                    </div>
+                    <div class="publication">
+                        <p>J. Sheng, L. Wang, Y. Fang, B. Qiao, H. Dong, X. Wang, B. Jin, J. Wang, <strong>S. Qin</strong>, S. Rajmohan, Q. Lin, and D. Zhang. "<a href="https://dl.acm.org/doi/10.1145/3543507.3583298" target="_blank">Learning cooperative oversubscription for cloud by chance-constrained multi-agent reinforcement learning</a>." 
+                           <em>Proceedings of the ACM Web Conference 2023</em>, Austin, TX, April 2023. WWW'23.</p>
+                    </div>
+                    <div class="publication">
+                        <p>H. Liu, P. Zhang, <strong>S. Qin</strong>, Y. Shi, M. Xu, Q. Lin, and D. Zhang. "<a href="https://dl.acm.org/doi/abs/10.1145/3543873.3584631" target="_blank">HAPENS: Hardness-personalized negative sampling for implicit collaborative filtering</a>." 
+                           <em>Companion Proceedings of the ACM Web Conference 2023</em>, Austin, TX, April 2023. WWW'23 Industry Track.</p>
+                    </div>
+                    <div class="publication">
+                        <p>T. Cheng, H. Dong, L. Wang, B. Qiao, <strong>S. Qin</strong>, Q. Lin, D. Zhang, S. Rajmohan, and T. Moscibroda. "<a href="https://dl.acm.org/doi/abs/10.1145/3543873.3584634" target="_blank">Multi-Agent reinforcement learning with shared policy for cloud quota management problem</a>." 
+                           <em>Companion Proceedings of the ACM Web Conference 2023</em>, Austin, TX, April 2023. WWW'23 Industry Track.</p>
+                    </div>
+                    <div class="publication">
+                        <p>F. Yang, L. Wang, Z. Xu, J. Zhang, L. Li, B. Qiao, C. Couturier, C. Bansal, S. Ram, <strong>S. Qin</strong>, Z. Ma, I. Goiri, E. Cortez, T. Yang, V. Rühle, S. Rajmohan, Q. Lin, and D. Zhang. "<a href="https://dl.acm.org/doi/abs/10.1145/3582016.3582028" target="_blank">Snape: Reliable and low-cost computing with mixture of spot and on-demand VMs</a>." 
+                           <em>Proceedings of the 28th ACM International Conference on Architectural Support for Programming Languages and Operating Systems</em>, Vancouver, Canada, March 2023. ASPLOS'23.</p>
+                    </div>
+                    <div class="publication">
+                        <p>J. Yan, Y. Lu, L. Chen, <strong>S. Qin</strong>, Y. Fang, Q. Lin, T. Moscibroda, S. Rajmohan, and D. Zhang. "<a href="https://dl.acm.org/doi/10.1145/3534678.3539334" target="_blank">Solving the batch stochastic bin packing problem in cloud: A chance-constrained optimization approach</a>." 
+                           <em>Proceedings of the 28th ACM SIGKDD Conference on Knowledge Discovery and Data Mining</em>, Washington, DC, August 2022. SIGKDD'22.</p>
+                    </div>
+                    <div class="publication">
+                        <p>C. Lou, C. Chen, P. Huang, Y. Dang, <strong>S. Qin</strong>, X. Yang, X. Li, Q. Lin, and M. Chintalapati. "<a href="https://www.usenix.org/conference/osdi22/presentation/lou-chang-resin" target="_blank">RESIN: A holistic service for dealing with memory leaks in production cloud infrastructure</a>." 
+                           <em>Proceedings of the 16th USENIX Symposium on Operating Systems Design and Implementation</em>, Carlsbad, CA, July 2022. OSDI'22.</p>
+                    </div>
+                    <div class="publication">
+                        <p>F. Yang, B. Pang, J. Zhang, B. Qiao, L. Wang, C. Couturier, C. Bansal, S. Ram, <strong>S. Qin</strong>, Z. Ma, Í. Goiri, E. Cortez, S. Baladhandayutham, V. Rühle, S. Rajmohan, Q. Lin, and D. Zhang. "<a href="https://www2022.thewebconf.org/PaperFiles/43.pdf" target="_blank">Spot virtual machine eviction prediction in Microsoft cloud</a>." 
+                           <em>Companion Proceedings of the ACM Web Conference 2022</em>, Lyon, France, April 2022. WWW'22 Industry Track.</p>
+                    </div>
+                    <div class="publication">
+                        <p>H. Dong, <strong>S. Qin</strong>, Y. Xu, B. Qiao, S. Zhou, X. Yang, C. Luo, P. Zhao, Q. Lin, H. Zhang, A. Abuduweili, S. Ramanujan, K. Subramanian, A. Zhou, S. Rajmohan, D. Zhang, and T. Moscibroda. "<a href="https://doi.org/10.1145/3468264.3473917" target="_blank">Effective low capacity status prediction for cloud systems</a>." 
+                           <em>Companion Proceedings of the 29th ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering</em>, Athens, Greece, August 2021. ESEC/FSE'21 Industry Track.</p>
+                    </div>
+                    <div class="publication">
+                        <p>X. Zhang, Y. Xu, <strong>S. Qin</strong>, S. He, B. Qiao, Z. Li, H. Zhang, X. Li, Y. Dang, Q. Lin, M. Chintalapati, S. Rajmohan, and D. Zhang. "<a href="https://doi.org/10.1145/3468264.3473919" target="_blank">Onion: identifying incident-indicating logs for cloud systems</a>." 
+                           <em>Companion Proceedings of the 29th ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering</em>, Athens, Greece, August 2021. ESEC/FSE'21 Industry Track.</p>
+                    </div>
+                    <div class="publication">
+                        <p>X. Zhang, C. Du, Y. Li, Y. Xu, H. Zhang, <strong>S. Qin</strong>, Z. Li, Q. Lin, Y. Dang, A. Zhou, S. Rajmohan, and D. Zhang. "<a href="https://doi.org/10.1145/3447548.3467190" target="_blank">HALO: Hierarchy-aware fault localization for cloud systems</a>." 
+                           <em>Proceedings of the 27th ACM SIGKDD Conference on Knowledge Discovery and Data Mining</em>, Singapore, Singapore, August 2021. SIGKDD'21 Applied Data Science Track.</p>
+                    </div>
+                    <div class="publication">
+                        <p>H. Dong, B. Wang, B. Qiao, W. Xing, C. Luo, <strong>S. Qin</strong>, Q. Lin, D. Zhang, G. Virdi, and T. Moscibroda. "<a href="https://www.ijcai.org/proceedings/2021/0499.pdf" target="_blank">Predictive job scheduling under uncertain constraints in cloud computing</a>." 
+                           <em>Proceedings of the 30th International Joint Conference on Artificial Intelligence</em>, Montreal, Canada, August 2021. IJCAI'21.</p>
+                    </div>
+                    <div class="publication">
+                        <p>J. Gu, C. Luo, <strong>S. Qin</strong>, B. Qiao, Q. Lin, H. Zhang, Z. Li, Y. Dang, S. Cai, W. Wu, Y. Zhou, M. Chintalapati, and D. Zhang. "<a href="https://doi.org/10.1145/3368089.3409741" target="_blank">Efficient incident identification from multi-dimensional issue reports via meta-heuristic search</a>." 
+                           <em>Proceedings of the 28th ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering</em>, Sacramento, CA, November 2020. ESEC/FSE'20.</p>
+                    </div>
+                    <div class="publication">
+                        <p> X. Zhang, Q. Lin, Y. Xu, <strong>S. Qin</strong>, H. Zhang, B. Qiao, Y. Dang, X. Yang, Q. Cheng, M. Chintalapati, Y. Wu, K. Hsieh, K. Sui, X. Meng, Y. Xu, W. Zhang, F. Shen, and D. Zhang. "<a href="https://www.usenix.org/system/files/atc19-zhang-xu.pdf" target="_blank">Cross-dataset time series anomaly detection for cloud systems</a>." 
+                           <em>Proceedings of the 2019 USENIX Annual Technical Conference</em>, Renton, WA, July 2019. USENIX ATC'19.</p>
+                    </div>
+                    <div class="publication">
+                        <p><strong>S. Qin</strong>, Y. D. Zhang, and M. G. Amin. "<a href="https://doi.org/10.1109/SAM.2016.7569635" target="_blank">Two-dimensional DOA estimation using parallel coprime subarrays</a>." 
+                           <em>Proceedings of the IEEE Sensor Array and Multichannel Signal Processing Workshop</em>, Rio de Janeiro, Brazil, July 2016. SAM'16.</p>
+                    </div>
+                    <div class="publication">
+                        <p>B. Wang, Y. D. Zhang, <strong>S. Qin</strong>, and M. G. Amin. "<a href="https://doi.org/10.1117/12.2225835" target="_blank">Robust nonstationary jammer mitigation for GPS receivers with instantaneous frequency error tolerance</a>." 
+                           <em>Proceedings of the SPIE Commercial+ Scientific Sensing and Imaging Conference</em>, Baltimore, MD, May 2016. SPIE'16.</p>
+                    </div>
+                    <div class="publication">
+                        <p>S. Liu, Y. D. Zhang, T. Shan, <strong>S. Qin</strong>, and M. G. Amin. "<a href="https://doi.org/10.1117/12.2228339" target="_blank">Structure-aware Bayesian compressive sensing for frequency-hopping spectrum estimation</a>." 
+                           <em>Proceedings of the SPIE Commercial+ Scientific Sensing and Imaging Conference</em>, Baltimore, MD, May 2016. SPIE'16.</p>
+                    </div>
+                    <div class="publication">
+                        <p><strong>S. Qin</strong>, Y. D. Zhang, and M. G. Amin. "<a href="https://doi.org/10.1109/RADAR.2016.7485154" target="_blank">Sparsity-based multi-target localization exploiting frequency diverse array radar with coprime array and coprime frequency offset</a>." 
+                           <em>Proceedings of the IEEE Radar Conference</em>, Philadelphia, PA, May 2016. RadarCon'16.</p>
+                    </div>
+                    <div class="publication">
+                        <p><strong>S. Qin</strong>, Y. D. Zhang, M. G. Amin, and A. M. Zoubir. "<a href="https://doi.org/10.1109/ICASSP.2016.7472522" target="_blank">Generalized coprime sampling of Toeplitz matrices</a>." 
+                           <em>Proceedings of the IEEE International Conference on Acoustics, Speech, and Signal Processing</em>, Shanghai, China, March 2016. ICASSP'16.</p>
+                    </div>
+                    <div class="publication">
+                        <p><strong>S. Qin</strong>, Y. D. Zhang, and M. G. Amin. "<a href="https://doi.org/10.1109/ChinaSIP.2015.7230418" target="_blank">Sparsity-based multi-target localization exploiting multi-frequency coprime array</a>." 
+                           <em>Proceedings of the IEEE China Summit and International Conference on Signal and Information Processing</em>, Chengdu, China, July 2015. ChinaSIP'15.</p>
+                    </div>
+                    <div class="publication">
+                        <p><strong>S. Qin</strong>, Y. D. Zhang, and M. G. Amin. "<a href="https://doi.org/10.1117/12.2178341" target="_blank">High-resolution frequency estimation using generalized coprime sampling</a>." 
+                           <em>Proceedings of the SPIE Mobile Multimedia/Image Processing, Security, and Applications Conference</em>, Baltimore, MD, May 2015. SPIE'15.</p>
+                    </div>
+                    <div class="publication">
+                        <p>Y. D. Zhang, <strong>S. Qin</strong>, and M. G. Amin. "<a href="https://doi.org/10.1109/RADAR.2015.7131121" target="_blank">Near-field source localization based on sparse reconstruction of sensor-angle distribution</a>." 
+                           <em>Proceedings of the IEEE International Radar Conference</em>, Arlington, VA, May 2015. RadarCon'15.</p>
+                    </div>
+                    <div class="publication">
+                        <p><strong>S. Qin</strong>, Y. D. Zhang, Q. Wu, and M. G. Amin. "<a href="https://doi.org/10.1109/ICASSP.2015.7178401" target="_blank">DOA estimation of non-parametric spreading spatial spectrum based on Bayesian compressive sensing exploiting intra-task dependency</a>." 
+                           <em>Proceedings of the IEEE International Conference on Acoustics, Speech, and Signal Processing</em>, Brisbane, Australia, April 2015. ICASSP'15.</p>
+                    </div>
+                    <div class="publication">
+                        <p><strong>S. Qin</strong>, Y. D. Zhang, and M. G. Amin. "<a href="https://doi.org/10.1109/BenMAS.2014.7529468" target="_blank">DOA estimation of mixed coherent and uncorrelated signals exploiting a nested MIMO system</a>." 
+                           <em>Proceedings of the IEEE Benjamin Franklin Symposium on Microwave and Antenna Sub-systems</em>, Philadelphia, PA, September 2014. BenMAS'14. 
+                           <strong class="award">(First Prize of Student Paper Competition)</strong></p>
+                    </div>
+                    <div class="publication">
+                        <p><strong>S. Qin</strong>, Y. D. Zhang, Q. Wu, and M. G. Amin. "<a href="https://doi.org/10.1109/ICDSP.2014.6900784" target="_blank">Large-scale sparse reconstruction through partitioned compressive sensing</a>." 
+                           <em>Proceedings of the International Conference on Digital Signal Processing</em>, Hong Kong, China, August 2014. DSP'14.</p>
+                    </div>
+                    <div class="publication">
+                        <p><strong>S. Qin</strong>, Y. D. Zhang, and M. G. Amin. "<a href="https://doi.org/10.1109/SAM.2014.6882459" target="_blank">Generalized coprime array configurations</a>." 
+                           <em>Proceedings of the IEEE Sensor Array and Multichannel Signal Processing Workshop</em>, A Coruña, Spain, June 2014. SAM'14.</p>
+                    </div>
+                    <div class="publication">
+                        <p><strong>S. Qin</strong>, Y. D. Zhang, and M. G. Amin. "<a href="https://doi.org/10.1117/12.2051000" target="_blank">DOA estimation exploiting coprime frequencies</a>." 
+                           <em>Proceedings of the SPIE Wireless Sensing, Localization, and Processing Conference</em>, vol. 9103, Baltimore, MD, May 2014. SPIE'14.</p>
+                    </div>
+                    <div class="publication">
+                        <p>Y. D. Zhang, <strong>S. Qin</strong>, and M. G. Amin. "<a href="https://doi.org/10.1109/ICASSP.2014.6854003" target="_blank">DOA estimation exploiting coprime arrays with sparse sensor spacing</a>." 
+                           <em>Proceedings of the IEEE International Conference on Acoustics, Speech, and Signal Processing</em>, Florence, Italy, May 2014. ICASSP'14.</p>
+                    </div>
+                    <div class="publication">
+                        <p><strong>S. Qin</strong>, X. Ma, and W. Sheng. "<a href="https://doi.org/10.1109/ICMMT.2012.6229966" target="_blank">Design and measurement of channel calibration for digital array with orthogonal codes</a>." 
+                           <em>Proceedings of the IEEE International Conference on Microwave and Millimeter Wave Technology</em>, Shenzhen, China, May 2012. ICMMT'12. 
+                           <strong class="award">(Best Student Paper Award)</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="patents" class="tab-content">
+                <div class="patents-container">
+                    <div class="patents-column">
+                        <h3>Chinese Patents</h3>
+                        <div class="publication-list">
+                            <div class="publication">
+                                <p><strong>秦思</strong>, 赵成帅. "<a href="https://patents.google.com/patent/CN110133594A/zh?inventor=%E7%A7%A6%E6%80%9D&assignee=%E6%90%9C%E7%8B%97&oq=%E7%A7%A6%E6%80%9D+%E6%90%9C%E7%8B%97" target="_blank">一种声源定位方法、装置和用于声源定位的装置</a>." 
+                                   北京搜狗科技发展有限公司，CN110133594A, 2018年2月申请，2019年8月发布，2023年4月授权.</p>
+                            </div>
+                            <div class="publication">
+                                <p><strong>秦思</strong>, 赵成帅. "<a href="https://patents.google.com/patent/CN110133595A/zh?inventor=%E7%A7%A6%E6%80%9D&assignee=%E6%90%9C%E7%8B%97&oq=%E7%A7%A6%E6%80%9D+%E6%90%9C%E7%8B%97" target="_blank">一种声源测向方法、装置和用于声源测向的装置</a>." 
+                                   北京搜狗科技发展有限公司，CN110133595A, 2018年2月申请，2019年8月发布，2023年5月授权.</p>
+                            </div>
+                            <div class="publication">
+                                <p>沙永涛, 贾朝阳, <strong>秦思</strong>. "<a href="https://patents.google.com/patent/CN111339371A/zh?inventor=%E7%A7%A6%E6%80%9D&assignee=%E5%98%80%E5%98%80&oq=%E7%A7%A6%E6%80%9D+%E5%98%80%E5%98%80" target="_blank">一种数据处理方法及装置</a>." 
+                                   北京嘀嘀无限科技发展有限公司，CN111339371A, 2018年12月申请，2020年6月发布, 2023年8月授权.</p>
+                            </div>
+                            <div class="publication">
+                                <p>沙永涛, <strong>秦思</strong>, 张毅, 宋辉. "<a href="https://patents.google.com/patent/CN110782887A/zh?inventor=%E7%A7%A6%E6%80%9D&assignee=%E5%98%80%E5%98%80&oq=%E7%A7%A6%E6%80%9D+%E5%98%80%E5%98%80" target="_blank">语音信号处理方法、系统、装置、设备和计算机存储介质</a>." 
+                                   北京嘀嘀无限科技发展有限公司，CN110782887A, 2019年3月申请，2020年2月发布.</p>
+                            </div>
                         </div>
-                        <div class="publication">
-                            <p>C. Chen, X. Yang, Y. Dang, and <strong>S. Qin</strong>. "<a href="https://patents.google.com/patent/US11269748B2/en?q=(si+qin)&assignee=microsoft&num=25&oq=si+qin+microsoft" target="_blank">Diagnosing and mitigating memory leak in computing nodes</a>." 
-                               Microsoft, US11269748B2, Application: 2020.4, Publication: 2021.10, Granted: 2022.3.</p>
-                        </div>
-                        <div class="publication">
-                            <p>S. Zhou, J. L. Miller, C. Cowdery, T. Moscibroda, S. Kemburu, Y. Xu, <strong>S. Qin</strong>, Q. Lin, E. Cortez, and K. Subramanian. "<a href="https://patents.google.com/patent/US11652720B2/en?q=(si+qin)&assignee=microsoft&num=25&oq=si+qin+microsoft" target="_blank">Allocating cloud resources in accordance with predicted deployment growth</a>." 
-                               Microsoft, US11652720B2, Application: 2019.9, Publication: 2020.12, Granted: 2023.5.</p>
-                        </div>
-                        <div class="publication">
-                            <p>B. Qiao, C. Du, S. Agarwal, L. R. Rodriguez, K. Subramanian, Q. Lin, J. Chen, T. Moscibroda, <strong>S. Qin</strong> and N. Sheth. "<a href="https://patents.google.com/patent/LU500944B1/en?q=(si+qin)&assignee=microsoft&num=25&oq=si+qin+microsoft" target="_blank">Automated recovery of stranded resources within a cloud computing environment</a>." 
-                               Microsoft, LU500944B1, Application: 2021.12, Granted: 2023.6.</p>
-                        </div>
-                        <div class="publication">
-                            <p>S. Zhou, S. Agarwal, K. Subramanian, T. Moscibroda, P. N. Selvaraj, S. Ramji, S. Iftimie, N. Sheth, W. Gu, A. Mani, <strong>S. Qin</strong>, Y. Xu, and Q. Lin. "<a href="https://patents.google.com/patent/US20210389894A1/en?q=(si+qin)&assignee=microsoft&num=25&oq=si+qin+microsoft" target="_blank">Predicting expansion failures and defragmenting cluster resources</a>." 
-                               Microsoft, US20210389894A1, Application: 2020.6, Publication: 2021.12, Granted: 2023.8.</p>
-                        </div>
-                        <div class="publication">
-                            <p>Y. Yang, G. Virdi, B. Qiao, H. Dong, K. Subramanian, M. Lalic, S. Zhou, <strong>S. Qin</strong>, T. Moscibroda, and Y. Mohammed. "<a href="https://patents.google.com/patent/US20220327002A1/en?q=(si+qin)&assignee=microsoft&num=25&oq=si+qin+microsoft" target="_blank">Allocating computing resources for deferrable virtual machines</a>." 
-                               Microsoft, US20220327002A1, Application: 2021.4, Publication: 2022.10, Granted: 2024.4.</p>
-                        </div>
-                        <div class="publication">
-                            <p>S. Zhou, K. Subramanian, Y. Dang, T. Moscibroda, Q. Lin, <strong>S. Qin</strong>, and Y. Xu. "<a href="https://patents.google.com/patent/WO2020206699A1/en?q=(si+qin)&assignee=microsoft&num=25&oq=si+qin+microsoft" target="_blank">Predicting virtual machine allocation failures on server node clusters</a>." 
-                               Microsoft, WO2020206699A1, Application: 2019.4, Publication: 2020.10.</p>
-                        </div>
-                        <div class="publication">
-                            <p>R. M. Narayanamurthy, Y. YU, Y. Fang, <strong>S. Qin</strong>, J. Yan, M. Huang, T. Shen, Q. Lin, and X. Zheng. "<a href="https://patents.google.com/patent/WO2023039711A1/en?q=(si+qin)&assignee=microsoft&num=25&oq=si+qin+microsoft" target="_blank">Efficiency engine in a cloud computing architecture</a>." 
-                               Microsoft, WO2023039711A1, Application: 2021.9, Publication: 2023.3.</p>
-                        </div>
-                        <div class="publication">
-                            <p>S. Ram, P. T. Stephenson, A. D. Fischer, M. Sayed, R. E. Minneker, E. Cortex, F. V. Frujeri, I. G. Presa, S. M. Panjwani, Y. Wang, C. J. Couturier, J. Zhang, Y. Fang, <strong>S. Qin</strong>, Q. Lin, C. Bansal, B. Pang, and V. Gupta. "<a href="https://patents.google.com/patent/US20230401103A1/en?q=(si+qin)&assignee=microsoft&num=50&oq=si+qin+microsoft" target="_blank">System and method of dynamically adjusting virtual machines for a workload</a>." 
-                               Microsoft, US20230401103A1, Application: 2022.6, Publication: 2023.12.</p>
-                        </div>
-                        <div class="publication">
-                            <p>H. Zhang, H. Dong, Z. Lin, S. Patel, B. Qiao, <strong>S. Qin</strong>, X. Qu, T. Yang, and Y. Yu. "<a href="https://patents.google.com/patent/WO2024055139A1/en?q=(si+qin)&assignee=microsoft&num=50&oq=si+qin+microsoft" target="_blank">Autonomous quota management for shared resources</a>." 
-                               Microsoft, WO2024055139A1, Application: 2022.9, Publication: 2024.3.</p>
-                        </div>
-                        <div class="publication">
-                            <p>L. Wang, M. Das, F. Yang, H. Dong, B. Qiao, Y. Liu, <strong>S. Qin</strong>, V. J. Ruehle, C. Bansal, and Q. Lin. "<a href="https://patents.google.com/patent/WO2024050824A1/en?q=(si+qin)&assignee=microsoft&num=50&oq=si+qin+microsoft" target="_blank">Oversubscription reinforcement learner</a>." 
-                               Microsoft, WO2024050824A1, Application: 2022.9, Publication: 2024.3.</p>
-                        </div>
-                        <div class="publication">
-                            <p>M. Verma, J. Hoachuck, Q. Lin, P. Rani, N. Jain, R. Namineni, J. Wong, <strong>S. Qin</strong>, Y. Kang, J. Ding, Y. Dang, J. Zhang, B. Qiao, and K. Bath. "<a href="https://patents.google.com/patent/US20240143433A1/en?q=(si+qin)&assignee=microsoft&num=50&oq=si+qin+microsoft" target="_blank">Detecting systemwide service issues by using anomaly localization</a>." 
-                               Microsoft, US20240143433A1, Application: 2022.10, Publication: 2024.5.</p>
+                    </div>
+
+                    <div class="patents-column">
+                        <h3>English Patents</h3>
+                        <div class="publication-list">
+                            <div class="publication">
+                                <p>Y. Zhang, H. Song, Y. Sha, and <strong>S. Qin</strong>. "<a href="https://patents.google.com/patent/US11227622B2/en?inventor=si+qin&assignee=didi&oq=si+qin+didi" target="_blank">Speech communication system and method for improving speech intelligibility</a>." 
+                                   Beijing Didi Infinity Technology and Development Co Ltd, US11227622B2, Application: 2018.12, Publication: 2021.7, Granted: 2022.1.</p>
+                            </div>
+                            <div class="publication">
+                                <p>C. Chen, X. Yang, Y. Dang, and <strong>S. Qin</strong>. "<a href="https://patents.google.com/patent/US11269748B2/en?q=(si+qin)&assignee=microsoft&num=25&oq=si+qin+microsoft" target="_blank">Diagnosing and mitigating memory leak in computing nodes</a>." 
+                                   Microsoft, US11269748B2, Application: 2020.4, Publication: 2021.10, Granted: 2022.3.</p>
+                            </div>
+                            <div class="publication">
+                                <p>S. Zhou, J. L. Miller, C. Cowdery, T. Moscibroda, S. Kemburu, Y. Xu, <strong>S. Qin</strong>, Q. Lin, E. Cortez, and K. Subramanian. "<a href="https://patents.google.com/patent/US11652720B2/en?q=(si+qin)&assignee=microsoft&num=25&oq=si+qin+microsoft" target="_blank">Allocating cloud resources in accordance with predicted deployment growth</a>." 
+                                   Microsoft, US11652720B2, Application: 2019.9, Publication: 2020.12, Granted: 2023.5.</p>
+                            </div>
+                            <div class="publication">
+                                <p>B. Qiao, C. Du, S. Agarwal, L. R. Rodriguez, K. Subramanian, Q. Lin, J. Chen, T. Moscibroda, <strong>S. Qin</strong> and N. Sheth. "<a href="https://patents.google.com/patent/LU500944B1/en?q=(si+qin)&assignee=microsoft&num=25&oq=si+qin+microsoft" target="_blank">Automated recovery of stranded resources within a cloud computing environment</a>." 
+                                   Microsoft, LU500944B1, Application: 2021.12, Granted: 2023.6.</p>
+                            </div>
+                            <div class="publication">
+                                <p>S. Zhou, S. Agarwal, K. Subramanian, T. Moscibroda, P. N. Selvaraj, S. Ramji, S. Iftimie, N. Sheth, W. Gu, A. Mani, <strong>S. Qin</strong>, Y. Xu, and Q. Lin. "<a href="https://patents.google.com/patent/US20210389894A1/en?q=(si+qin)&assignee=microsoft&num=25&oq=si+qin+microsoft" target="_blank">Predicting expansion failures and defragmenting cluster resources</a>." 
+                                   Microsoft, US20210389894A1, Application: 2020.6, Publication: 2021.12, Granted: 2023.8.</p>
+                            </div>
+                            <div class="publication">
+                                <p>Y. Yang, G. Virdi, B. Qiao, H. Dong, K. Subramanian, M. Lalic, S. Zhou, <strong>S. Qin</strong>, T. Moscibroda, and Y. Mohammed. "<a href="https://patents.google.com/patent/US20220327002A1/en?q=(si+qin)&assignee=microsoft&num=25&oq=si+qin+microsoft" target="_blank">Allocating computing resources for deferrable virtual machines</a>." 
+                                   Microsoft, US20220327002A1, Application: 2021.4, Publication: 2022.10, Granted: 2024.4.</p>
+                            </div>
+                            <div class="publication">
+                                <p>S. Zhou, K. Subramanian, Y. Dang, T. Moscibroda, Q. Lin, <strong>S. Qin</strong>, and Y. Xu. "<a href="https://patents.google.com/patent/WO2020206699A1/en?q=(si+qin)&assignee=microsoft&num=25&oq=si+qin+microsoft" target="_blank">Predicting virtual machine allocation failures on server node clusters</a>." 
+                                   Microsoft, WO2020206699A1, Application: 2019.4, Publication: 2020.10.</p>
+                            </div>
+                            <div class="publication">
+                                <p>R. M. Narayanamurthy, Y. YU, Y. Fang, <strong>S. Qin</strong>, J. Yan, M. Huang, T. Shen, Q. Lin, and X. Zheng. "<a href="https://patents.google.com/patent/WO2023039711A1/en?q=(si+qin)&assignee=microsoft&num=25&oq=si+qin+microsoft" target="_blank">Efficiency engine in a cloud computing architecture</a>." 
+                                   Microsoft, WO2023039711A1, Application: 2021.9, Publication: 2023.3.</p>
+                            </div>
+                            <div class="publication">
+                                <p>S. Ram, P. T. Stephenson, A. D. Fischer, M. Sayed, R. E. Minneker, E. Cortex, F. V. Frujeri, I. G. Presa, S. M. Panjwani, Y. Wang, C. J. Couturier, J. Zhang, Y. Fang, <strong>S. Qin</strong>, Q. Lin, C. Bansal, B. Pang, and V. Gupta. "<a href="https://patents.google.com/patent/US20230401103A1/en?q=(si+qin)&assignee=microsoft&num=50&oq=si+qin+microsoft" target="_blank">System and method of dynamically adjusting virtual machines for a workload</a>." 
+                                   Microsoft, US20230401103A1, Application: 2022.6, Publication: 2023.12.</p>
+                            </div>
+                            <div class="publication">
+                                <p>H. Zhang, H. Dong, Z. Lin, S. Patel, B. Qiao, <strong>S. Qin</strong>, X. Qu, T. Yang, and Y. Yu. "<a href="https://patents.google.com/patent/WO2024055139A1/en?q=(si+qin)&assignee=microsoft&num=50&oq=si+qin+microsoft" target="_blank">Autonomous quota management for shared resources</a>." 
+                                   Microsoft, WO2024055139A1, Application: 2022.9, Publication: 2024.3.</p>
+                            </div>
+                            <div class="publication">
+                                <p>L. Wang, M. Das, F. Yang, H. Dong, B. Qiao, Y. Liu, <strong>S. Qin</strong>, V. J. Ruehle, C. Bansal, and Q. Lin. "<a href="https://patents.google.com/patent/WO2024050824A1/en?q=(si+qin)&assignee=microsoft&num=50&oq=si+qin+microsoft" target="_blank">Oversubscription reinforcement learner</a>." 
+                                   Microsoft, WO2024050824A1, Application: 2022.9, Publication: 2024.3.</p>
+                            </div>
+                            <div class="publication">
+                                <p>M. Verma, J. Hoachuck, Q. Lin, P. Rani, N. Jain, R. Namineni, J. Wong, <strong>S. Qin</strong>, Y. Kang, J. Ding, Y. Dang, J. Zhang, B. Qiao, and K. Bath. "<a href="https://patents.google.com/patent/US20240143433A1/en?q=(si+qin)&assignee=microsoft&num=50&oq=si+qin+microsoft" target="_blank">Detecting systemwide service issues by using anomaly localization</a>." 
+                                   Microsoft, US20240143433A1, Application: 2022.10, Publication: 2024.5.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -861,7 +897,21 @@
     </footer>
 
     <script>
+        // Existing script
         document.getElementById('current-year').textContent = new Date().getFullYear();
+    
+        // Add tab functionality
+        document.querySelectorAll('.tab-button').forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons and content
+                document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+                
+                // Add active class to clicked button and corresponding content
+                button.classList.add('active');
+                document.getElementById(button.dataset.tab).classList.add('active');
+            });
+        });
     </script>
 </body>
 </html>
