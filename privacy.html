@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy</title>
+  <style>
+    /* Skip Link：默认隐藏，获得聚焦时显示 */
+    .skip-link {
+      position: absolute;
+      left: -1000px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      background: #fff;
+      color: #000;
+      padding: 8px;
+      z-index: 1000;
+      border: 2px solid #000;
+    }
+    .skip-link:focus {
+      left: 0;
+      top: 0;
+      width: auto;
+      height: auto;
+    }
+    
+    /* 针对移动端的响应式设计 */
+    @media (max-width: 768px) {
+      body {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body style="font-family: Arial, sans-serif; max-width: 800px; margin: auto; padding: 2rem;">
+  <!-- Skip Link，方便键盘用户快速跳转到主要内容 -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <header role="banner">
+    <h1>Privacy Policy</h1>
+    <p><strong>Effective Date:</strong> June 11, 2025</p>
+  </header>
+  
+  <!-- 主内容区域，添加 role="main" 及 id 方便 Skip Link 定位 -->
+  <main id="main-content" role="main">
+    <p>
+      Welcome to our website (“we”, “us”, or “our”). We value your privacy and are committed to protecting your personal information.
+      This Privacy Policy explains how we collect, use, and safeguard your data when you visit our website.
+    </p>
+  
+    <h2>1. What Information Do We Collect?</h2>
+    <p>When you access our website, we may automatically collect certain information, including:</p>
+    <ul>
+      <li>Your IP address</li>
+      <li>Browser type and language settings</li>
+      <li>Operating system</li>
+      <li>Pages visited and time spent on the site</li>
+      <li>Referring websites or links</li>
+    </ul>
+  
+    <h2>2. How Do We Collect This Information?</h2>
+    <p>
+      We use <strong>Google Analytics</strong> to track and analyze how users interact with our website.
+      Google Analytics uses cookies (small text files stored on your device) to collect usage data.
+    </p>
+  
+    <h2>3. About Google Analytics</h2>
+    <p>
+      Google Analytics is a service provided by Google, and its data processing is governed by Google's privacy policies.
+      You can learn more here:
+    </p>
+    <ul>
+      <li><a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a></li>
+      <li><a href="https://policies.google.com/technologies/partner-sites" target="_blank">How Google Uses Data</a></li>
+    </ul>
+  
+    <h2>4. How to Opt-Out</h2>
+    <p>
+      If you do not wish to be tracked by Google Analytics, you may:
+    </p>
+    <ul>
+      <li>Disable cookies in your browser settings</li>
+      <li>
+        Install the 
+        <a href="https://tools.google.com/dlpage/gaoptout" target="_blank">
+          Google Analytics Opt-Out Browser Add-on
+        </a>
+      </li>
+    </ul>
+  
+    <h2>5. How We Use the Information</h2>
+    <p>The information collected is used to:</p>
+    <ul>
+      <li>Analyze website traffic and usage trends</li>
+      <li>Improve our content and user experience</li>
+      <li>Ensure site performance and security</li>
+    </ul>
+    <p>We do not use this data to personally identify visitors and do not sell or share it with third parties.</p>
+  
+    <h2>6. Data Security</h2>
+    <p>
+      We implement reasonable security measures to protect your information from unauthorized access or disclosure.
+    </p>
+  
+    <h2>7. Third-Party Links</h2>
+    <p>
+      Our website may contain links to third-party sites. We are not responsible for the privacy practices of those sites.
+      Please review their policies separately.
+    </p>
+  
+    <h2>8. Changes to This Policy</h2>
+    <p>
+      We reserve the right to update this Privacy Policy at any time. Changes will be posted on this page and take effect immediately.
+    </p>
+  
+    <h2>9. Contact Us</h2>
+    <p>
+      If you have any questions about this Privacy Policy, please contact us at:<br />
+      📧 <a href="mailto:siqin1988@outlook.com">siqin1988@outlook.com</a>
+    </p>
+  </main>
+  
+  <footer role="contentinfo">
+    <p style="text-align: center; font-size: 0.9rem;">
+      &copy; <span id="current-year">2025</span> Si Qin. All Rights Reserved.
+    </p>
+    <script>
+      document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+  </footer>
+</body>
+</html>

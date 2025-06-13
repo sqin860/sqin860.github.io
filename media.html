@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media - Si Qin</title>
+    <link rel="stylesheet" href="common.css">
+    <style>
+      /* Skip link 隐藏，聚焦时显示 */
+      .skip-link {
+          position: absolute;
+          left: -999px;
+          top: auto;
+          width: 1px;
+          height: 1px;
+          overflow: hidden;
+      }
+      .skip-link:focus {
+          position: static;
+          width: auto;
+          height: auto;
+          background: #fff;
+          padding: 8px;
+          text-align: center;
+          z-index: 1000;
+          border: 2px solid #000;
+      }
+      
+      /* 响应式设计 */
+      @media (max-width: 768px) {
+         .tabs {
+            flex-direction: column;
+            gap: 5px;
+         }
+         .tab-button {
+            font-size: 16px;
+            padding: 10px;
+         }
+      }
+    </style>
+</head>
+<body>
+    <!-- Skip Link -->
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    
+    <!-- 公共头部 -->
+    <div id="common-header" role="banner"></div>
+
+    <!-- 主要内容区域 -->
+    <main id="main-content" class="container" role="main">
+       <div class="section" id="media">
+         <!-- 使用 nav 和 ARIA 属性定义 Tab 导航 -->
+         <nav class="tabs" role="tablist" aria-label="Main Navigation" style="margin-bottom: 20px;">
+           <a class="tab-button" role="tab" href="index.html" aria-selected="false">About</a>
+           <a class="tab-button" role="tab" href="publications.html" aria-selected="false">Publications</a>
+           <a class="tab-button" role="tab" href="patent.html" aria-selected="false">Patents</a>
+           <button class="tab-button active" role="tab" aria-selected="true" disabled>Media</button>
+         </nav>
+         
+         <!-- 主要内容区域：使用 section 并添加 aria-labelledby -->
+         <section role="region" aria-labelledby="media-heading">
+            <h2 id="media-heading">Media</h2>
+            <p>
+              "<a href="https://www.jiqizhixin.com/articles/2025-05-06-13" target="_blank">微软正式开源UFO²，Windows桌面迈入「AgentOS 时代」！</a>", 机器之心, 05/2025
+            </p>
+            <p>
+              "<a href="https://mp.weixin.qq.com/s/BVFV8v6KGcpKoz_TYdBdAA" target="_blank">微软华人团队最新研究：从LLM到LAM，让大模型真正具有「行动力」！</a>", 新智元, 01/2025
+            </p>
+            <p>
+              "<a href="https://mp.weixin.qq.com/s/6FHrOMXTCUmKS2GrWrzzrA" target="_blank">无直接数据可用，AI怎么学会「干活」？微软团队揭秘AI从语言到行动的进化之路</a>", 机器之心, 01/2025
+            </p>
+            <p>
+              "<a href="https://mp.weixin.qq.com/s/WhWGjLrYraomGz7yI8R5_A" target="_blank">引领人机交互革命？微软研究团队发布80页的大模型GUI智能体综述</a>", 机器之心, 01/2025
+            </p>
+            <p>
+              "<a href="https://azure.microsoft.com/de-de/blog/advancing-memory-leak-detection-with-aiops-introducing-resin/" target="_blank">Advancing Memory Leak Detection with AIOps - Introducing RESIN</a>", Microsoft Azure Blog, 04/2024
+            </p>
+            <p>
+              "<a href="https://baijiahao.baidu.com/s?id=1790938358152188625&wfr=spider&for=pc" target="_blank">下一代Windows系统曝光：基于GPT-4V，Agent跨应用调度，代号UFO</a>", 量子位, 02/2024
+            </p>
+            <p>
+              "<a href="https://www.microsoft.com/en-us/research/blog/taskweaver-a-code-first-agent-framework-for-efficient-data-analytics-and-domain-adaptation/" target="_blank">TaskWeaver: A code-first Agent Framework for Efficient Data Analytics and Domain Adaptation</a>", Microsoft Research Blog, 01/2024
+            </p>
+            <p>
+              "<a href="https://www.microsoft.com/en-us/research/articles/boosting-cloud-efficiency-harnessing-data-driven-decision-making-and-optimization-techniques/" target="_blank">Boosting Cloud Efficiency: Harnessing Data-Driven Decision-Making and Optimization Techniques</a>", Microsoft System Innovation Research Blog, 12/2023
+            </p>
+            <p>
+              "<a href="https://azure.microsoft.com/en-us/blog/advancing-anomaly-detection-with-aiops-introducing-aidice" target="_blank">Advancing Anomaly Dtection with AIOps - Introducing AiDice</a>", Microsoft Azure Blog, 03/2022
+            </p>
+         </section>
+       </div>
+    </main>
+    
+    <!-- 公共底部 -->
+    <div id="common-footer" role="contentinfo"></div>
+    
+    <!-- 加载公共部分的脚本 -->
+    <script>
+       // 加载公共 header
+       fetch('./common.html')
+         .then(response => response.text())
+         .then(data => {
+           document.getElementById('common-header').innerHTML = data;
+         });
+       
+       // 加载公共 footer
+       fetch('./footer.html')
+         .then(response => response.text())
+         .then(data => {
+           document.getElementById('common-footer').innerHTML = data;
+         })
+         .catch(error => console.error("加载 footer 失败:", error));
+    </script>
+    <!-- 如果公共footer中含动态年份，额外更新 -->
+    <script>
+         const currentYearElem = document.getElementById('footer-current-year');
+         if (currentYearElem) {
+             currentYearElem.textContent = new Date().getFullYear();
+         }
+    </script>
+</body>
+</html>
