@@ -298,4 +298,28 @@ a:hover, button:hover {
     .tabs {
         gap: 8px;
     }
+  /* 让 profile-container 竖向排列 */
+  .profile-container {
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+  }
+  /* 头像容器调整 */
+  .profile-photo-container {
+      margin: 0 0 10px;
+  }
+  /* 缩小头像尺寸 */
+  .profile-photo {
+      width: 200px;
+      height: 200px;
+  }
+  /* 文字部分居中 */
+  .profile-info {
+      text-align: center;
+  }
+  /* 社交链接居中并减小间距 */
+  .social-links {
+      justify-content: center;
+      gap: 10px;
+  }
 }
