@@ -1,16 +1,49 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LVJ6791VP4"></script>
+    <!-- 改进的 Google Analytics 配置 -->
     <script>
+        // 预先设置 dataLayer，防止时序问题
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
+        
+        // 设置初始配置
         gtag('js', new Date());
-        gtag('config', 'G-LVJ6791VP4');
+        gtag('config', 'G-LVJ6791VP4', {
+            // 提高数据收集稳定性的配置
+            'send_page_view': false, // 先不发送，等页面完全加载后再发送
+            'transport_type': 'beacon', // 使用更可靠的传输方式
+            'allow_google_signals': true,
+            'allow_ad_personalization_signals': true,
+            'cookie_expires': 63072000, // 2年cookie过期时间
+            'cookie_update': true,
+            'cookie_flags': 'SameSite=None;Secure' // 提高跨域兼容性
+        });
+        
+        // 添加调试信息
+        gtag('config', 'G-LVJ6791VP4', {
+            'debug_mode': window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+        });
     </script>
+    
+    <!-- 异步加载 GA 脚本，带错误处理 -->
+    <script>
+        (function() {
+            var script = document.createElement('script');
+            script.async = true;
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-LVJ6791VP4';
+            script.onerror = function() {
+                console.warn('Google Analytics script failed to load');
+                // 可以在这里添加备用分析方案
+            };
+            document.head.appendChild(script);
+        })();
+    </script>
+    
+    <!-- 其他元数据保持不变 -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     
     <!-- Structured Data for Google -->
     <script type="application/ld+json">
@@ -35,12 +68,22 @@
             }
         ],
         "url": "https://sqin860.github.io/",
+        "image": "https://sqin860.github.io/Si.jpg",
+        "email": "siqin1988@outlook.com",
         "sameAs": [
             "https://scholar.google.com/citations?user=0qLzf_4AAAAJ&hl=en",
             "https://www.linkedin.com/in/si-qin-07649798/"
+        ],
+        "knowsAbout": [
+            "Large Language Models",
+            "AI Agents", 
+            "AIOps",
+            "Signal Processing",
+            "Machine Learning"
         ]
     }
     </script>
+    
     <link rel="stylesheet" href="common.css">
     <style>
         /* Skip Link：默认隐藏，获得焦点时突出显示 */
@@ -64,7 +107,17 @@
             z-index: 1000;
             border: 2px solid #000;
         }
+        
+        .error-message {
+            background-color: #fef2f2;
+            border: 1px solid #dc2626;
+            color: #dc2626;
+            padding: 12px;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
     </style>
+    
     <title>Si Qin - Home</title>
 </head>
 <body>
@@ -78,54 +131,30 @@
     <main id="main-content" class="container" role="main">
         <div class="section" id="about">
             <!-- Tab 导航：添加 aria-label 和 role="tablist" -->
-            <div class="tabs" role="tablist" aria-label="Page Navigation" style="margin-bottom: 20px;">
-                <button class="tab-button active" role="tab" aria-selected="true" disabled>About</button>
+            <nav class="tabs" role="tablist" aria-label="Page Navigation" style="margin-bottom: 20px;">
+                <button class="tab-button active" role="tab" aria-selected="true" aria-controls="about-content" id="about-tab">About</button>
                 <a class="tab-button" role="tab" href="publications.html" aria-selected="false">Publications</a>
                 <a class="tab-button" role="tab" href="patent.html" aria-selected="false">Patents</a>
                 <a class="tab-button" role="tab" href="media.html" aria-selected="false">Media</a>
+            </nav>
+            
+            <!-- 页面内容，添加tabpanel角色 -->
+            <div id="about-content" role="tabpanel" aria-labelledby="about-tab">
+                <p>Dr. Si Qin is a Principal Research Manager in the Data, Knowledge, and Intelligence (DKI) area of Microsoft AI, where he leads research and applied science efforts focused on large language models (LLMs) and AI agents. Prior to this role, he was a Principal Researcher at Microsoft Research Asia, where he dedicated his work to advancing AI for IT Operations (AIOps). Before joining Microsoft, Dr. Qin worked on speech signal processing at Sogou and Didi between 2016 and 2018. 
+                   He is a globally recognized expert in signal processing, AIOps, LLMs, and AI agents. He has authored over 50 research papers in top-tier conferences and journals and holds more than 10 patents. His contributions have been recognized with numerous prestigious awards, including Best Student Paper Award at the 2012 IEEE International Conference on Microwave and Millimeter Wave Technology, First Prize in the Student Paper Competition at the 2014 IEEE Benjamin Franklin Symposium on Microwave and Antenna Sub-systems,
+                   2018 Young Author Best Paper Award from the IEEE Signal Processing Society, 2021 Best Paper Award from the European Association for Signal Processing, Distinguished Contribution Award at the 2021 Microsoft Machine Learning, AI, and Data Science Conference,
+                   Best Tech Transfers of the Year Award at Microsoft Research Asia, Team Award at Microsoft Asia-Pacific R&D. In 2022, he was elected as a Senior Member of IEEE.</p>
+                <p>秦思博士现任微软数据、知识与智能（DKI）领域的首席研究经理，领导大规模语言模型（LLM）与 AI 智能体方向的研究与应用科学工作。在此之前，他曾在微软亚洲研究院担任首席研究员，专注于智能运维（AIOps）技术的突破与落地。加入微软之前，秦博士在 2016 年至 2018 年期间，先后就职于搜狗与滴滴，开展语音信号处理方面的研究与开发。作为信号处理、AIOps、LLM 与 AI 智能体领域的国际公认专家，秦思博士已在顶级学术会议与期刊上发表论文 50 余篇，并拥有 10 余项授权专利。他的卓越贡献多次获得业内重量级奖项肯定，包括：
+                   2012 年 IEEE 国际微波与毫米波技术大会最佳学生论文奖，2014 年 IEEE 本杰明·富兰克林微波与天线子系统研讨会学生论文竞赛一等奖，2018 年 IEEE 信号处理学会青年最佳论文奖，2021 年欧洲信号处理协会最佳论文奖，2021 年微软机器学习、AI 与数据科学大会杰出贡献奖，微软亚洲研究院年度最佳技术转化奖，和微软亚太研发团队年度团队奖等。2022 年，秦博士被评选为 IEEE 高级会员。</p>
             </div>
-            <!-- 页面内容 -->
-            <p>Dr. Si Qin is a Principal Research Manager in the Data, Knowledge, and Intelligence (DKI) area of Microsoft AI, where he leads research and applied science efforts focused on large language models (LLMs) and AI agents. Prior to this role, he was a Principal Researcher at Microsoft Research Asia, where he dedicated his work to advancing AI for IT Operations (AIOps). Before joining Microsoft, Dr. Qin worked on speech signal processing at Sogou and Didi between 2016 and 2018. 
-               He is a globally recognized expert in signal processing, AIOps, LLMs, and AI agents. He has authored over 50 research papers in top-tier conferences and journals and holds more than 10 patents. His contributions have been recognized with numerous prestigious awards, including Best Student Paper Award at the 2012 IEEE International Conference on Microwave and Millimeter Wave Technology, First Prize in the Student Paper Competition at the 2014 IEEE Benjamin Franklin Symposium on Microwave and Antenna Sub-systems,
-               2018 Young Author Best Paper Award from the IEEE Signal Processing Society, 2021 Best Paper Award from the European Association for Signal Processing, Distinguished Contribution Award at the 2021 Microsoft Machine Learning, AI, and Data Science Conference,
-               Best Tech Transfers of the Year Award at Microsoft Research Asia, Team Award at Microsoft Asia-Pacific R&D. In 2022, he was elected as a Senior Member of IEEE.</p>
-            <p>秦思博士现任微软数据、知识与智能（DKI）领域的首席研究经理，领导大规模语言模型（LLM）与 AI 智能体方向的研究与应用科学工作。在此之前，他曾在微软亚洲研究院担任首席研究员，专注于智能运维（AIOps）技术的突破与落地。加入微软之前，秦博士在 2016 年至 2018 年期间，先后就职于搜狗与滴滴，开展语音信号处理方面的研究与开发。作为信号处理、AIOps、LLM 与 AI 智能体领域的国际公认专家，秦思博士已在顶级学术会议与期刊上发表论文 50 余篇，并拥有 10 余项授权专利。他的卓越贡献多次获得业内重量级奖项肯定，包括：
-               2012 年 IEEE 国际微波与毫米波技术大会最佳学生论文奖，2014 年 IEEE 本杰明·富兰克林微波与天线子系统研讨会学生论文竞赛一等奖，2018 年 IEEE 信号处理学会青年最佳论文奖，2021 年欧洲信号处理协会最佳论文奖，2021 年微软机器学习、AI 与数据科学大会杰出贡献奖，微软亚洲研究院年度最佳技术转化奖，和微软亚太研发团队年度团队奖等。2022 年，秦博士被评选为 IEEE 高级会员。</p>
         </div>
     </main>
     
     <!-- 公共 Footer，通过脚本加载并添加 role -->
     <div id="common-footer" role="contentinfo"></div>
     
-    <script>
-        // 加载公共 header
-        fetch('./common.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('common-header').innerHTML = data;
-            });
-        
-        // 加载公共 footer
-        fetch('./footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('common-footer').innerHTML = data;
-            })
-            .catch(error => console.error("加载 footer 失败:", error));
-    </script>
-    <script>
-        // Tab 导航无障碍优化：点击时设置 aria-selected 状态
-        document.querySelectorAll('.tab-button').forEach(button => {
-            button.addEventListener('click', () => {
-                document.querySelectorAll('.tab-button').forEach(btn => {
-                    btn.classList.remove('active');
-                    btn.setAttribute('aria-selected', 'false');
-                });
-                button.classList.add('active');
-                button.setAttribute('aria-selected', 'true');
-            });
-        });
-    </script>
+    <!-- 使用新的公共JS文件替换原有的脚本 -->
+    <script src="js/common.js"></script>
 </body>
 </html>
 

@@ -25,6 +25,17 @@
       z-index: 1000;
       border: 2px solid #000;
     }
+    
+    /* 错误提示样式 */
+    .error-message {
+      background-color: #fef2f2;
+      border: 1px solid #dc2626;
+      color: #dc2626;
+      padding: 12px;
+      border-radius: 8px;
+      margin: 10px 0;
+    }
+    
     /* 响应式设计：手机端优化 */
     @media (max-width: 768px) {
       .tabs {
@@ -52,167 +63,155 @@
       <nav class="tabs" role="tablist" aria-label="Main Navigation" style="margin-bottom: 20px;">
         <a class="tab-button" role="tab" href="index.html" aria-selected="false">About</a>
         <a class="tab-button" role="tab" href="publications.html" aria-selected="false">Publications</a>
-        <button class="tab-button active" role="tab" aria-selected="true" disabled>Patents</button>
+        <button class="tab-button active" role="tab" aria-selected="true" aria-controls="patents-content" id="patents-tab">Patents</button>
         <a class="tab-button" role="tab" href="media.html" aria-selected="false">Media</a>
       </nav>
       
-      <!-- English Patents 区域 -->
-      <h2 id="english-patents-heading">English Patents</h2>
-      <section role="region" aria-labelledby="english-patents-heading">
-        <div class="publication-list">
-          <div class="publication">
-            <p>
-              M. Verma, J. Hoachuck, Q. Lin, P. Rani, N. Jain, R. Namineni, J. Wong, <strong>S. Qin</strong>, Y. Kang, J. Ding, Y. Dang, J. Zhang, B. Qiao, and K. Bath. 
-              "<a href="https://patents.google.com/patent/US20240143433A1/en?q=(si+qin)&assignee=microsoft&num=50&oq=si+qin+microsoft" target="_blank">Detecting systemwide service issues by using anomaly localization</a>." 
-              Microsoft, US20240143433A1, Application: 2022.10, Publication: 2024.5.
-              <strong class="award">(Granted: 2025.1)</strong>
-            </p>
+      <!-- 添加tabpanel角色和关联属性 -->
+      <div id="patents-content" role="tabpanel" aria-labelledby="patents-tab">
+        <!-- English Patents 区域 -->
+        <section role="region" aria-labelledby="english-patents-heading">
+          <h2 id="english-patents-heading">English Patents</h2>
+          <div class="publication-list">
+            <div class="publication">
+              <p>
+                M. Verma, J. Hoachuck, Q. Lin, P. Rani, N. Jain, R. Namineni, J. Wong, <strong>S. Qin</strong>, Y. Kang, J. Ding, Y. Dang, J. Zhang, B. Qiao, and K. Bath. 
+                "<a href="https://patents.google.com/patent/US20240143433A1/en?q=(si+qin)&assignee=microsoft&num=50&oq=si+qin+microsoft" target="_blank">Detecting systemwide service issues by using anomaly localization</a>." 
+                Microsoft, Application: 2022.10, Publication: 2024.5.
+                <strong class="award">(Granted: 2025.1)</strong>
+              </p>
+            </div>
+            <div class="publication">
+              <p>
+                Y. Yang, G. Virdi, B. Qiao, H. Dong, K. Subramanian, M. Lalic, S. Zhou, <strong>S. Qin</strong>, T. Moscibroda, and Y. Mohammed. 
+                "<a href="https://patents.google.com/patent/US20220327002A1/en?q=(si+qin)&assignee=microsoft&num=25&oq=si+qin+microsoft" target="_blank">Allocating computing resources for deferrable virtual machines</a>." 
+                Microsoft, Application: 2021.4, Publication: 2022.10.
+                <strong class="award">(Granted: 2024.4)</strong>
+              </p>
+            </div>
+            <div class="publication">
+              <p>
+                S. Zhou, S. Agarwal, K. Subramanian, T. Moscibroda, P. N. Selvaraj, S. Ramji, S. Iftimie, N. Sheth, W. Gu, A. Mani, <strong>S. Qin</strong>, Y. Xu, and Q. Lin. 
+                "<a href="https://patents.google.com/patent/US20210389894A1/en?q=(si+qin)&assignee=microsoft&num=25&oq=si+qin+microsoft" target="_blank">Predicting expansion failures and defragmenting cluster resources</a>." 
+                Microsoft, Application: 2020.6, Publication: 2021.12.
+                <strong class="award">(Granted: 2023.8)</strong>
+              </p>
+            </div>
+            <div class="publication">
+              <p>
+                B. Qiao, C. Du, S. Agarwal, L. R. Rodriguez, K. Subramanian, Q. Lin, J. Chen, T. Moscibroda, <strong>S. Qin</strong> and N. Sheth. 
+                "<a href="https://patents.google.com/patent/LU500944B1/en?q=(si+qin)&assignee=microsoft&num=25&oq=si+qin+microsoft" target="_blank">Automated recovery of stranded resources within a cloud computing environment</a>." 
+                Microsoft, Application: 2021.12.
+                <strong class="award">(Granted: 2023.6)</strong>
+              </p>
+            </div>
+            <div class="publication">
+              <p>
+                S. Zhou, J. L. Miller, C. Cowdery, T. Moscibroda, S. Kemburu, Y. Xu, <strong>S. Qin</strong>, Q. Lin, E. Cortez, and K. Subramanian. 
+                "<a href="https://patents.google.com/patent/US11652720B2/en?q=(si+qin)&assignee=microsoft&num=25&oq=si+qin+microsoft" target="_blank">Allocating cloud resources in accordance with predicted deployment growth</a>." 
+                Microsoft, Application: 2019.9, Publication: 2020.12.
+                <strong class="award">(Granted: 2023.5)</strong>
+              </p>
+            </div>
+            <div class="publication">
+              <p>
+                C. Chen, X. Yang, Y. Dang, and <strong>S. Qin</strong>. 
+                "<a href="https://patents.google.com/patent/US11269748B2/en?q=(si+qin)&assignee=microsoft&num=25&oq=si+qin+microsoft" target="_blank">Diagnosing and mitigating memory leak in computing nodes</a>." 
+                Microsoft, Application: 2020.4, Publication: 2021.10.
+                <strong class="award">(Granted: 2022.3)</strong>
+              </p>
+            </div>
+            <div class="publication">
+              <p>
+                Y. Zhang, H. Song, Y. Sha, and <strong>S. Qin</strong>. 
+                "<a href="https://patents.google.com/patent/US11227622B2/en?inventor=si+qin&assignee=didi&oq=si+qin+didi" target="_blank">Speech communication system and method for improving speech intelligibility</a>." 
+                Beijing Didi Infinity Technology and Development Co Ltd, Application: 2018.12, Publication: 2021.7.
+                <strong class="award">(Granted: 2022.1)</strong>
+              </p>
+            </div>
+            <div class="publication">
+              <p>
+                L. Wang, M. Das, F. Yang, H. Dong, B. Qiao, Y. Liu, <strong>S. Qin</strong>, V. J. Ruehle, C. Bansal, and Q. Lin. 
+                "<a href="https://patents.google.com/patent/WO2024050824A1/en?q=(si+qin)&assignee=microsoft&num=50&oq=si+qin+microsoft" target="_blank">Oversubscription reinforcement learner</a>." 
+                Microsoft, Application: 2022.9, Publication: 2024.3.
+              </p>
+            </div>
+            <div class="publication">
+              <p>
+                H. Zhang, H. Dong, Z. Lin, S. Patel, B. Qiao, <strong>S. Qin</strong>, X. Qu, T. Yang, and Y. Yu. 
+                "<a href="https://patents.google.com/patent/WO2024055139A1/en?q=(si+qin)&assignee=microsoft&num=50&oq=si+qin+microsoft" target="_blank">Autonomous quota management for shared resources</a>." 
+                Microsoft, Application: 2022.9, Publication: 2024.3.
+              </p>
+            </div>
+            <div class="publication">
+              <p>
+                S. Ram, P. T. Stephenson, A. D. Fischer, M. Sayed, R. E. Minneker, E. Cortex, F. V. Frujeri, I. G. Presa, S. M. Panjwani, Y. Wang, C. J. Couturier, J. Zhang, Y. Fang, <strong>S. Qin</strong>, Q. Lin, C. Bansal, B. Pang, and V. Gupta. 
+                "<a href="https://patents.google.com/patent/US20230401103A1/en?q=(si+qin)&assignee=microsoft&num=50&oq=si+qin+microsoft" target="_blank">System and method of dynamically adjusting virtual machines for a workload</a>." 
+                Microsoft, Application: 2022.6, Publication: 2023.12.
+              </p>
+            </div>
+            <div class="publication">
+              <p>
+                R. M. Narayanamurthy, Y. YU, Y. Fang, <strong>S. Qin</strong>, J. Yan, M. Huang, T. Shen, Q. Lin, and X. Zheng. 
+                "<a href="https://patents.google.com/patent/WO2023039711A1/en?q=(si+qin)&assignee=microsoft&num=25&oq=si+qin+microsoft" target="_blank">Efficiency engine in a cloud computing architecture</a>." 
+                Microsoft, Application: 2021.9, Publication: 2023.3.
+              </p>
+            </div>
+            <div class="publication">
+              <p>
+                S. Zhou, K. Subramanian, Y. Dang, T. Moscibroda, Q. Lin, <strong>S. Qin</strong>, and Y. Xu. 
+                "<a href="https://patents.google.com/patent/WO2020206699A1/en?q=(si+qin)&assignee=microsoft&num=25&oq=si+qin+microsoft" target="_blank">Predicting virtual machine allocation failures on server node clusters</a>." 
+                Microsoft, Application: 2019.4, Publication: 2020.10.
+              </p>
+            </div>
           </div>
-          <div class="publication">
-            <p>
-              Y. Yang, G. Virdi, B. Qiao, H. Dong, K. Subramanian, M. Lalic, S. Zhou, <strong>S. Qin</strong>, T. Moscibroda, and Y. Mohammed. 
-              "<a href="https://patents.google.com/patent/US20220327002A1/en?q=(si+qin)&assignee=microsoft&num=25&oq=si+qin+microsoft" target="_blank">Allocating computing resources for deferrable virtual machines</a>." 
-              Microsoft, US20220327002A1, Application: 2021.4, Publication: 2022.10.
-              <strong class="award">(Granted: 2024.4)</strong>
-            </p>
+        </section>
+        
+        <!-- Chinese Patents 区域 -->
+        <section role="region" aria-labelledby="chinese-patents-heading">
+          <h2 id="chinese-patents-heading">Chinese Patents</h2>
+          <div class="publication-list">
+            <div class="publication">
+              <p>
+                沙永涛, 贾朝阳, <strong>秦思</strong>. 
+                "<a href="https://patents.google.com/patent/CN111339371A/zh?inventor=%E7%A7%A6%E6%80%9D&assignee=%E5%98%80%E5%98%80&oq=%E7%A7%A6%E6%80%9D+%E5%98%80%E5%98%80" target="_blank">一种数据处理方法及装置</a>."  
+                北京嘀嘀无限科技发展有限公司, 2018年12月申请，2020年6月发布.
+                <strong class="award">(2023年8月授权)</strong>
+              </p>
+            </div>
+            <div class="publication">
+              <p>
+                <strong>秦思</strong>, 赵成帅. 
+                "<a href="https://patents.google.com/patent/CN110133595A/zh?inventor=%E7%A7%A6%E6%80%9D&assignee=%E6%90%9C%E7%8B%97&oq=%E7%A7%A6%E6%80%9D+%E6%90%9C%E7%8B%97" target="_blank">一种声源测向方法、装置和用于声源测向的装置</a>." 
+                北京搜狗科技发展有限公司，2018年2月申请，2019年8月发布.
+                <strong class="award">(2023年5月授权)</strong>
+              </p>
+            </div>
+            <div class="publication">
+              <p>
+                <strong>秦思</strong>, 赵成帅. 
+                "<a href="https://patents.google.com/patent/CN110133594A/zh?inventor=%E7%A7%A6%E6%80%9D&assignee=%E6%90%9C%E7%8B%97&oq=%E7%A7%A6%E6%80%9D+%E6%90%9C%E7%8B%97" target="_blank">一种声源定位方法、装置和用于声源定位的装置</a>." 
+                北京搜狗科技发展有限公司，2018年2月申请，2019年8月发布.
+                <strong class="award">(2023年4月授权)</strong>
+              </p>
+            </div>
+            <div class="publication">
+              <p>
+                沙永涛, <strong>秦思</strong>, 张毅, 宋辉. 
+                "<a href="https://patents.google.com/patent/CN110782887A/zh?inventor=%E7%A7%A6%E6%80%9D&assignee=%E5%98%80%E5%98%80&oq=%E7%A7%A6%E6%80%9D+%E5%98%80%E5%98%80" target="_blank">语音信号处理方法、系统、装置、设备和计算机存储介质</a>." 
+                北京嘀嘀无限科技发展有限公司，2019年3月申请，2020年2月发布.
+              </p>
+            </div>
           </div>
-          <div class="publication">
-            <p>
-              S. Zhou, S. Agarwal, K. Subramanian, T. Moscibroda, P. N. Selvaraj, S. Ramji, S. Iftimie, N. Sheth, W. Gu, A. Mani, <strong>S. Qin</strong>, Y. Xu, and Q. Lin. 
-              "<a href="https://patents.google.com/patent/US20210389894A1/en?q=(si+qin)&assignee=microsoft&num=25&oq=si+qin+microsoft" target="_blank">Predicting expansion failures and defragmenting cluster resources</a>." 
-              Microsoft, US20210389894A1, Application: 2020.6, Publication: 2021.12.
-              <strong class="award">(Granted: 2023.8)</strong>
-            </p>
-          </div>
-          <div class="publication">
-            <p>
-              B. Qiao, C. Du, S. Agarwal, L. R. Rodriguez, K. Subramanian, Q. Lin, J. Chen, T. Moscibroda, <strong>S. Qin</strong> and N. Sheth. 
-              "<a href="https://patents.google.com/patent/LU500944B1/en?q=(si+qin)&assignee=microsoft&num=25&oq=si+qin+microsoft" target="_blank">Automated recovery of stranded resources within a cloud computing environment</a>." 
-              Microsoft, LU500944B1, Application: 2021.12.
-              <strong class="award">(Granted: 2023.6)</strong>
-            </p>
-          </div>
-          <div class="publication">
-            <p>
-              S. Zhou, J. L. Miller, C. Cowdery, T. Moscibroda, S. Kemburu, Y. Xu, <strong>S. Qin</strong>, Q. Lin, E. Cortez, and K. Subramanian. 
-              "<a href="https://patents.google.com/patent/US11652720B2/en?q=(si+qin)&assignee=microsoft&num=25&oq=si+qin+microsoft" target="_blank">Allocating cloud resources in accordance with predicted deployment growth</a>." 
-              Microsoft, US11652720B2, Application: 2019.9, Publication: 2020.12.
-              <strong class="award">(Granted: 2023.5)</strong>
-            </p>
-          </div>
-          <div class="publication">
-            <p>
-              C. Chen, X. Yang, Y. Dang, and <strong>S. Qin</strong>. 
-              "<a href="https://patents.google.com/patent/US11269748B2/en?q=(si+qin)&assignee=microsoft&num=25&oq=si+qin+microsoft" target="_blank">Diagnosing and mitigating memory leak in computing nodes</a>." 
-              Microsoft, US11269748B2, Application: 2020.4, Publication: 2021.10.
-              <strong class="award">(Granted: 2022.3)</strong>
-            </p>
-          </div>
-          <div class="publication">
-            <p>
-              Y. Zhang, H. Song, Y. Sha, and <strong>S. Qin</strong>. 
-              "<a href="https://patents.google.com/patent/US11227622B2/en?inventor=si+qin&assignee=didi&oq=si+qin+didi" target="_blank">Speech communication system and method for improving speech intelligibility</a>." 
-              Beijing Didi Infinity Technology and Development Co Ltd, US11227622B2, Application: 2018.12, Publication: 2021.7.
-              <strong class="award">(Granted: 2022.1)</strong>
-            </p>
-          </div>
-          <div class="publication">
-            <p>
-              L. Wang, M. Das, F. Yang, H. Dong, B. Qiao, Y. Liu, <strong>S. Qin</strong>, V. J. Ruehle, C. Bansal, and Q. Lin. 
-              "<a href="https://patents.google.com/patent/WO2024050824A1/en?q=(si+qin)&assignee=microsoft&num=50&oq=si+qin+microsoft" target="_blank">Oversubscription reinforcement learner</a>." 
-              Microsoft, WO2024050824A1, Application: 2022.9, Publication: 2024.3.
-            </p>
-          </div>
-          <div class="publication">
-            <p>
-              H. Zhang, H. Dong, Z. Lin, S. Patel, B. Qiao, <strong>S. Qin</strong>, X. Qu, T. Yang, and Y. Yu. 
-              "<a href="https://patents.google.com/patent/WO2024055139A1/en?q=(si+qin)&assignee=microsoft&num=50&oq=si+qin+microsoft" target="_blank">Autonomous quota management for shared resources</a>." 
-              Microsoft, WO2024055139A1, Application: 2022.9, Publication: 2024.3.
-            </p>
-          </div>
-          <div class="publication">
-            <p>
-              S. Ram, P. T. Stephenson, A. D. Fischer, M. Sayed, R. E. Minneker, E. Cortex, F. V. Frujeri, I. G. Presa, S. M. Panjwani, Y. Wang, C. J. Couturier, J. Zhang, Y. Fang, <strong>S. Qin</strong>, Q. Lin, C. Bansal, B. Pang, and V. Gupta. 
-              "<a href="https://patents.google.com/patent/US20230401103A1/en?q=(si+qin)&assignee=microsoft&num=50&oq=si+qin+microsoft" target="_blank">System and method of dynamically adjusting virtual machines for a workload</a>." 
-              Microsoft, US20230401103A1, Application: 2022.6, Publication: 2023.12.
-            </p>
-          </div>
-          <div class="publication">
-            <p>
-              R. M. Narayanamurthy, Y. YU, Y. Fang, <strong>S. Qin</strong>, J. Yan, M. Huang, T. Shen, Q. Lin, and X. Zheng. 
-              "<a href="https://patents.google.com/patent/WO2023039711A1/en?q=(si+qin)&assignee=microsoft&num=25&oq=si+qin+microsoft" target="_blank">Efficiency engine in a cloud computing architecture</a>." 
-              Microsoft, WO2023039711A1, Application: 2021.9, Publication: 2023.3.
-            </p>
-          </div>
-          <div class="publication">
-            <p>
-              S. Zhou, K. Subramanian, Y. Dang, T. Moscibroda, Q. Lin, <strong>S. Qin</strong>, and Y. Xu. 
-              "<a href="https://patents.google.com/patent/WO2020206699A1/en?q=(si+qin)&assignee=microsoft&num=25&oq=si+qin+microsoft" target="_blank">Predicting virtual machine allocation failures on server node clusters</a>." 
-              Microsoft, WO2020206699A1, Application: 2019.4, Publication: 2020.10.
-            </p>
-          </div>
-        </div>
-      </section>
-      
-      <!-- Chinese Patents 区域 -->
-      <h2 id="chinese-patents-heading">Chinese Patents</h2>
-      <section role="region" aria-labelledby="chinese-patents-heading">
-        <div class="publication-list">
-          <div class="publication">
-            <p>
-              沙永涛, 贾朝阳, <strong>秦思</strong>. 
-              "<a href="https://patents.google.com/patent/CN111339371A/zh?inventor=%E7%A7%A6%E6%80%9D&assignee=%E5%98%80%E5%98%80&oq=%E7%A7%A6%E6%80%9D+%E5%98%80%E5%98%80" target="_blank">一种数据处理方法及装置</a>."  
-              北京嘀嘀无限科技发展有限公司, CN111339371A, 2018年12月申请，2020年6月发布.
-              <strong class="award">(2023年8月授权)</strong>
-            </p>
-          </div>
-          <div class="publication">
-            <p>
-              <strong>秦思</strong>, 赵成帅. 
-              "<a href="https://patents.google.com/patent/CN110133595A/zh?inventor=%E7%A7%A6%E6%80%9D&assignee=%E6%90%9C%E7%8B%97&oq=%E7%A7%A6%E6%80%9D+%E6%90%9C%E7%8B%97" target="_blank">一种声源测向方法、装置和用于声源测向的装置</a>." 
-              北京搜狗科技发展有限公司，CN110133595A, 2018年2月申请，2019年8月发布.
-              <strong class="award">(2023年5月授权)</strong>
-            </p>
-          </div>
-          <div class="publication">
-            <p>
-              <strong>秦思</strong>, 赵成帅. 
-              "<a href="https://patents.google.com/patent/CN110133594A/zh?inventor=%E7%A7%A6%E6%80%9D&assignee=%E6%90%9C%E7%8B%97&oq=%E7%A7%A6%E6%80%9D+%E6%90%9C%E7%8B%97" target="_blank">一种声源定位方法、装置和用于声源定位的装置</a>." 
-              北京搜狗科技发展有限公司，CN110133594A, 2018年2月申请，2019年8月发布.
-              <strong class="award">(2023年4月授权)</strong>
-            </p>
-          </div>
-          <div class="publication">
-            <p>
-              沙永涛, <strong>秦思</strong>, 张毅, 宋辉. 
-              "<a href="https://patents.google.com/patent/CN110782887A/zh?inventor=%E7%A7%A6%E6%80%9D&assignee=%E5%98%80%E5%98%80&oq=%E7%A7%A6%E6%80%9D+%E5%98%80%E5%98%80" target="_blank">语音信号处理方法、系统、装置、设备和计算机存储介质</a>." 
-              北京嘀嘀无限科技发展有限公司，CN110782887A, 2019年3月申请，2020年2月发布.
-            </p>
-          </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </div>
   </main>
   
   <!-- 公共 Footer（使用 role="contentinfo" 表示页脚） -->
   <div id="common-footer" role="contentinfo"></div>
   
-  <!-- 加载公共部分的脚本 -->
-  <script>
-    // 加载公共 header
-    fetch('./common.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('common-header').innerHTML = data;
-      });
-    
-    // 加载公共 footer
-    fetch('./footer.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('common-footer').innerHTML = data;
-      })
-      .catch(error => console.error("Loading footer failed:", error));
-  </script>
+  <!-- 使用新的公共JS文件替换原有的脚本 -->
+  <script src="js/common.js"></script>
 </body>
 </html>
