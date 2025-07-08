@@ -52,6 +52,8 @@ class CommonLoader {
     }
     
     static async init() {
+        this.initGlobalErrorHandling();
+        
         // 显示加载状态
         this.showLoadingState();
         
@@ -270,6 +272,22 @@ class CommonLoader {
                 imageObserver.observe(img);
             });
         }
+    }
+    
+    // 在CommonLoader类中添加全局错误处理
+    static initGlobalErrorHandling() {
+        // 捕获未处理的Promise拒绝
+        window.addEventListener('unhandledrejection', (event) => {
+            console.error('Unhandled promise rejection:', event.reason);
+            this.trackEvent('error', 'unhandled_promise_rejection', event.reason?.message || 'Unknown');
+            event.preventDefault();
+        });
+        
+        // 捕获JavaScript错误
+        window.addEventListener('error', (event) => {
+            console.error('JavaScript error:', event.error);
+            this.trackEvent('error', 'javascript_error', `${event.filename}:${event.lineno}`);
+        });
     }
 }
 
