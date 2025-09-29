@@ -138,11 +138,13 @@ h3 {
 }
 
 .publication-list {
-    counter-reset: publication-counter; 
+    counter-reset: publication-counter; /* 由 JavaScript 动态设置 */
+    display: flex;
+    flex-direction: column; /* 恢复正常顺序 */
 }
 
 .publication {
-    counter-increment: publication-counter;
+    counter-increment: publication-counter -1; /* 正号递减 */
     position: relative;
     padding: 20px 20px 20px 70px;
     margin-bottom: 15px;
@@ -160,7 +162,7 @@ h3 {
 .publication::before {
     content: "[" counter(publication-counter) "]";
     position: absolute;
-    left: 25px;
+    left: 5px;
     top: 20px;
     color: var(--secondary-color);
     font-weight: 500;
