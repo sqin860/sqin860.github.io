@@ -85,38 +85,6 @@
     </script>
     
     <link rel="stylesheet" href="common.css">
-    <style>
-        /* Skip Link：默认隐藏，获得焦点时突出显示 */
-        .skip-link {
-            position: absolute;
-            left: -1000px;
-            top: auto;
-            width: 1px;
-            height: 1px;
-            overflow: hidden;
-        }
-        .skip-link:focus {
-            position: static;
-            left: 0;
-            top: 0;
-            width: auto;
-            height: auto;
-            background: #fff;
-            padding: 8px;
-            text-align: center;
-            z-index: 1000;
-            border: 2px solid #000;
-        }
-        
-        .error-message {
-            background-color: #fef2f2;
-            border: 1px solid #dc2626;
-            color: #dc2626;
-            padding: 12px;
-            border-radius: 8px;
-            margin: 10px 0;
-        }
-    </style>
     
     <title>Si Qin - Home</title>
 </head>
@@ -131,7 +99,7 @@
     <main id="main-content" class="container" role="main">
         <div class="section" id="about">
             <!-- Tab 导航：添加 aria-label 和 role="tablist" -->
-            <nav class="tabs" role="tablist" aria-label="Page Navigation" style="margin-bottom: 20px;">
+            <nav class="tabs" role="tablist" aria-label="Page Navigation">
                 <button class="tab-button active" role="tab" aria-selected="true" aria-controls="about-content" id="about-tab">About</button>
                 <a class="tab-button" role="tab" href="publications.html" aria-selected="false">Publications</a>
                 <a class="tab-button" role="tab" href="patent.html" aria-selected="false">Patents</a>

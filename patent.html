@@ -5,49 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Patents - Si Qin</title>
   <link rel="stylesheet" href="common.css">
-  <style>
-    /* Skip Link：默认隐藏，聚焦显示 */
-    .skip-link {
-      position: absolute;
-      left: -999px;
-      top: auto;
-      width: 1px;
-      height: 1px;
-      overflow: hidden;
-    }
-    .skip-link:focus {
-      position: static;
-      width: auto;
-      height: auto;
-      background: #fff;
-      padding: 8px;
-      text-align: center;
-      z-index: 1000;
-      border: 2px solid #000;
-    }
-    
-    /* 错误提示样式 */
-    .error-message {
-      background-color: #fef2f2;
-      border: 1px solid #dc2626;
-      color: #dc2626;
-      padding: 12px;
-      border-radius: 8px;
-      margin: 10px 0;
-    }
-    
-    /* 响应式设计：手机端优化 */
-    @media (max-width: 768px) {
-      .tabs {
-        flex-direction: column;
-        gap: 5px;
-      }
-      .tab-button {
-        font-size: 16px;
-        padding: 10px;
-      }
-    }
-  </style>
 </head>
 <body>
   <!-- Skip Link 方便键盘用户快速跳转至主要内容 -->
@@ -60,7 +17,7 @@
   <main id="main-content" class="container" role="main">
     <div class="section" id="patents">
       <!-- 使用导航（<nav>）和 ARIA 属性定义 Tab 导航 -->
-      <nav class="tabs" role="tablist" aria-label="Main Navigation" style="margin-bottom: 20px;">
+      <nav class="tabs" role="tablist" aria-label="Main Navigation">
         <a class="tab-button" role="tab" href="index.html" aria-selected="false">About</a>
         <a class="tab-button" role="tab" href="publications.html" aria-selected="false">Publications</a>
         <button class="tab-button active" role="tab" aria-selected="true" aria-controls="patents-content" id="patents-tab">Patents</button>

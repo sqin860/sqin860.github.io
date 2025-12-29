@@ -4,37 +4,29 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy</title>
+  <link rel="stylesheet" href="common.css">
   <style>
-    /* Skip Link：默认隐藏，获得聚焦时显示 */
-    .skip-link {
-      position: absolute;
-      left: -1000px;
-      top: auto;
-      width: 1px;
-      height: 1px;
-      overflow: hidden;
-      background: #fff;
-      color: #000;
-      padding: 8px;
-      z-index: 1000;
-      border: 2px solid #000;
-    }
-    .skip-link:focus {
-      left: 0;
-      top: 0;
-      width: auto;
-      height: auto;
+    /* Privacy page specific styles */
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem;
     }
     
-    /* 针对移动端的响应式设计 */
     @media (max-width: 768px) {
       body {
         padding: 1rem;
       }
     }
+
+    footer p {
+      text-align: center;
+      font-size: 0.9rem;
+    }
   </style>
 </head>
-<body style="font-family: Arial, sans-serif; max-width: 800px; margin: auto; padding: 2rem;">
+<body>
   <!-- Skip Link，方便键盘用户快速跳转到主要内容 -->
   <a class="skip-link" href="#main-content">Skip to main content</a>
   
@@ -123,12 +115,12 @@
   </main>
   
   <footer role="contentinfo">
-    <p style="text-align: center; font-size: 0.9rem;">
-      &copy; <span id="current-year">2025</span> Si Qin. All Rights Reserved.
+    <p>
+      &copy; <span id="current-year"></span> Si Qin. All Rights Reserved.
     </p>
-    <script>
-      document.getElementById('current-year').textContent = new Date().getFullYear();
-    </script>
   </footer>
+  <script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>

@@ -205,6 +205,18 @@ class CommonLoader {
         
         // 初始化滚动追踪
         this.initScrollTracking();
+        
+        // 初始化publication计数器
+        this.initPublicationCounters();
+    }
+    
+    static initPublicationCounters() {
+        const publicationLists = document.querySelectorAll(".publication-list");
+        publicationLists.forEach((list) => {
+            const publications = list.querySelectorAll(".publication");
+            const count = publications.length;
+            list.style.counterReset = `publication-counter ${count + 1}`;
+        });
     }
     
     static initTabNavigation() {
@@ -305,16 +317,4 @@ window.addEventListener('online', () => {
 
 window.addEventListener('offline', () => {
     CommonLoader.trackEvent('technical', 'connection_lost', '');
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-    const publicationLists = document.querySelectorAll(".publication-list");
-
-    publicationLists.forEach((list) => {
-        const publications = list.querySelectorAll(".publication");
-        const count = publications.length;
-
-        // 设置计数器的初始值为项目数量加 1
-        list.style.counterReset = `publication-counter ${count + 1}`;
-    });
 });

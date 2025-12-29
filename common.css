@@ -241,6 +241,39 @@ h3 {
     display: block;
 }
 
+/* Skip Link：默认隐藏，获得焦点时突出显示 */
+.skip-link {
+    position: absolute;
+    left: -1000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.skip-link:focus {
+    position: static;
+    left: 0;
+    top: 0;
+    width: auto;
+    height: auto;
+    background: #fff;
+    padding: 8px;
+    text-align: center;
+    z-index: 1000;
+    border: 2px solid #000;
+}
+
+/* 错误提示样式 */
+.error-message {
+    background-color: #fef2f2;
+    border: 1px solid #dc2626;
+    color: #dc2626;
+    padding: 12px;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
 /* 无障碍焦点样式 */
 a:focus, button:focus, input:focus, select:focus {
     outline: 3px solid var(--secondary-color);
